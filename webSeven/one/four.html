@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>项目五</title>
+<style>
+*{ margin:0px; padding:0px; list-style:none;}
+img{ display:block;}
+body{ background:#ddd; font-family:"微软雅黑"}
+input{ outline:none;}
+a{ text-decoration:none;}
+.fl{ float:left;}
+.fr{ float:right;}
+.clear{ zoom:1;}
+.clear:after{ content:""; display:block; clear:both;}
+/*common Style  start*/
+.header { height:60px; line-height:60px; width:100%; background:#000; }
+.header .logo{ float:left; margin-top:10px; margin-left:30px;}
+.header .nav{ float:right; width:370px;}
+.content{ margin:0px 20px;}
+.content>div{ border:solid 1px #999; border-right:solid 2px #000; border-bottom:solid 2px #000; padding:20px; background:#fff; margin-top:20px; margin-right:400px; float:left;}
+.content>div>h2{ height:60px; line-height:60px; font-size:22px;}
+.content>div>h3{ height:40px; line-height:40px; color:#666; font-size:18px;}
+.content>div>p{ color:#999; height:30px; line-height:30px; font-size:12px;}
+.content>div>div{ line-height:24px; font-size:14px;}
+.content>div li{ height:30px; line-height:30px;}
+.footer{ height:60px; line-height:50px; color:#fff; font-size:12px; text-align:center; background:#000; margin-top:20px;} 
+/*common Style  end*/
+
+.nav li{ width:70px; text-align:center; margin-right:20px; float:left;}
+.nav li.active a{ color:#F63;}
+.nav li a{ color:#fff;  font-size:14px;}
+
+.project li{ text-indent:24px;}
+.project a{ color:#333;}
+.project a:hover{ color:red; text-decoration:underline;}
+.common .images dl{ padding:10px; text-align:center; width:20%; min-width:100px; border:solid 1px #ddd; margin-bottom:10px; float:left; margin-right:10px;}
+.common .images dl dt{ font-size:12px; font-weight:bold; height:30px; line-height:20px;} 
+.common .images dl dd img{ width:100%; height:auto;}
+
+.rank ol li{ font-weight:bold; }
+
+.table table td{ height:20px; text-indent:20px; line-height:20px;}
+.table table thead{ color:#fff;}
+.table table tbody{ color:#000;}
+
+.form{ margin:0px auto 10px;}
+.form .text{ text-align:right; width:100px; height:30px;}
+.form .input{ height:30px; margin-left:10px;}
+.form .t{ color:#999; font-size:12px; line-height:10px;}
+form .sub{ width:100%; height:40px; line-height:40px; color:#fff; font-size:16px; background:#39F; margin:10px auto; border-radius:10px; border:none;}
+
+.box{ position:relative;}
+.four{ position:absolute; width:360px; top:0px; right:10px; margin-right:0px !important;}
+</style>
+</head>
+
+<body>
+<div class="header clear">
+	<div class="logo">
+    	<h1>
+        	<img src="../../img/baidu.png" alt="项目二" />
+        </h1>
+    </div>
+    <div class="nav">
+    	<ul class="clear">
+        	<li><a href="javascript:void(0);">导航链接一</a></li>
+            <li><a href="javascript:void(0);">导航链接二</a></li>
+            <li><a href="javascript:void(0);">导航链接三</a></li>
+            <li class="active"><a href="javascript:void(0);">导航链接四</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="box clear">
+    <div class="content clear">
+        <div>
+            <h2>文章一级标题</h2>
+            <h3>文章二级标题</h3>
+            <p>文章作者 文章发表时间</p>
+            <div class="common">
+                <p>现在模块化其实已经体现出来了，提前模块做好，直接复制就行，细节进行调整</p>
+                <a href="javascript:void(0);"><img src="../../img/web.jpg" /></a>
+                <p>有时候h1标签一定要包裹着关键词。比如包裹的是img标签， 一定加上alt属性关键字。这样才起作用。附则你h1标签就废了。pc网页块与块之间的距离一般是10px或者20px；最起码都是整数。</p>
+            </div>
+        </div>
+        <div>
+            <h2>另一篇文章一级标题</h2>
+            <h3>文章二级标题</h3>
+            <p>文章作者 文章发表时间</p>
+            <div class="common">
+                <div>
+                    <p>写网页的时候一般都是拿到设计图以后先不要急着写，要先分析，看看那些部分是相同的，划分模块，模块划分好了以后然后开始大结构，从大到小，从左往右。就像小时候搭积木一样。当你把结构搭好了，模块的样式写好了再从细节开始。<a href="javascript:void(0);">加个超链接吧！不要忘了javascript：void（0）；</a>这样的话当你把首页写完以后，写其他页面的时候你会发现特别方便  直接复制，只需要修改小的细节就可以。 当然你要是碰到一个不怎么会设计网页的设计。一个页面一个样式，那你只能祈祷了。</p>
+                <a href="javascript:void(0);"><img src="../../img/web.jpg" /></a>
+                <p>有时候h1标签一定要包裹着关键词。比如包裹的是img标签， 一定加上alt属性关键字。这样才起作用。附则你h1标签就废了。pc网页块与块之间的距离一般是10px或者20px；最起码都是整数。</p>
+                </div>
+                <div>
+                    <ul class="project">
+                        <li><a href="javascript:void(0);">列表项目一</a></li>
+                        <li><a href="javascript:void(0);">列表项目二</a></li>
+                        <li><a href="javascript:void(0);">列表项目三</a></li>
+                    </ul>            
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>图片</h2>
+            <div class="common">
+                <div class="images clear">
+                    <dl>
+                        <dt>好看的图片</dt>
+                        <dd><a href="javascript:void(0);"><img src="../../img/web.jpg" /></a></dd>
+                    </dl>
+                    <dl>
+                        <dt>好看的图片</dt>
+                        <dd><a href="javascript:void(0);"><img src="../../img/web.jpg" /></a></dd>
+                    </dl>
+                    <dl>
+                        <dt>好看的图片</dt>
+                        <dd><a href="javascript:void(0);"><img src="../../img/web.jpg" /></a></dd>
+                    </dl>
+                    <dl>
+                        <dt>好看的图片</dt>
+                        <dd><a href="javascript:void(0);"><img src="../../img/web.jpg" /></a></dd>
+                    </dl>
+                    <dl>
+                        <dt>好看的图片</dt>
+                        <dd><a href="javascript:void(0);"><img src="../../img/web.jpg" /></a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>最后一篇文章一级标题</h2>
+            <h3>文章二级标题</h3>
+            <p>文章作者 文章发表时间</p>
+            <div class="rank">
+                <ol>
+                    <li>1 . 排名1</li>
+                    <li>2 . 排名2</li>
+                    <li>3 . 排名3</li>
+                </ol>
+            </div>
+            
+            <div class="table">
+                <p>写table  border这里有个技巧，普通的border在这里会不一样。如果用到直接百度。网上说的很详细。写table  border这里有个技巧，普通的border在这里会不一样。如果用到直接百度。网上说的很详细。v写table  border这里有个技巧，普通的border在这里会不一样。如果用到直接百度。网上说的很详细。</p>
+                <table width="100%" bgcolor="#ddd" cellpadding="0" cellspacing="1" border="0">
+                    <thead bgcolor="#000">
+                        <td>表头</td>
+                        <td>表头</td>
+                        <td>表头</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#fff">表内容单元格</td>
+                            <td bgcolor="#fff">表内容单元格</td>
+                            <td bgcolor="#fff"><a href="javascript:void(0);">操作</a></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff">表内容单元格</td>
+                            <td bgcolor="#fff">表内容单元格</td>
+                             <td bgcolor="#fff"><a href="javascript:void(0);">操作</a></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff">表内容单元格</td>
+                            <td bgcolor="#fff">表内容单元格</td>
+                             <td bgcolor="#fff"><a href="javascript:void(0);">操作</a></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff">表内容单元格</td>
+                            <td bgcolor="#fff">表内容单元格</td>
+                             <td bgcolor="#fff"><a href="javascript:void(0);">操作</a></td>
+                        </tr>
+                        <tr bgcolor="#ddd">
+                            <td>总计</td>
+                            <td colspan="2">1000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="four">
+            <h3>这以后是一个侧栏，这是侧栏的标题</h3>
+            
+                <form>
+                    <div class="form">
+                        <div class="clear">
+                        <div class="text fl">
+                            请输入邮箱地址
+                        </div>
+                        <div class="input fl">
+                            <input type="text" value="这是一个文本输入框" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            
+                        </div>
+                        <div class="input fl">
+                            <p class="t">邮箱地址请按要求格式输入</p>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            请输入密码
+                        </div>
+                        <div class="input fl">
+                            <input type="password" value="这是一个文本输入框" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            请重复输入密码
+                        </div>
+                        <div class="input fl">
+                            <input type="password" value="这是一个文本输入框" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            
+                        </div>
+                        <div class="input fl">
+                            <p class="t">密码请为6~16为英文数字</p>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            性别
+                        </div>
+                        <div class="input fl">
+                            <input type="radio" value="这是一个文本输入框" />男&nbsp;<input type="radio" value="这是一个文本输入框" />女
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            城市
+                        </div>
+                        <div class="input fl">
+                            <select>
+                                <option>北京</option>
+                                <option>山西</option>
+                                <option>河北</option>
+                                <option>上海</option>
+                            </select>
+                        </div>
+                    </div>
+                     <div class="clear">
+                        <div class="text fl">
+                            爱好
+                        </div>
+                        <div class="input fl">
+                            <input type="checkbox" />运动&nbsp;<input type="checkbox" />艺术&nbsp;<input type="checkbox" />科学
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="text fl">
+                            个人描述
+                        </div>
+                        <div class="input fl">
+                            <textarea placeholder="这是一个多行的输入框，请输入您的个人描述">
+                            
+                            </textarea>
+                        </div>
+                    </div>
+                    </div>
+                    <input class="sub" type="submit" value="确认提交"/>
+                </form>
+            
+           
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+版权所有&copy;
+</div>
+<p>如果学到了，请点个赞！您的支持是我们团队最大的动力。</p>
+</body>
+</html>
