@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <h3>污染城市列表</h3>
+  <ul id="aqi-list">
+<!--   
+    <li>第一名：福州（样例），10</li>
+  	<li>第二名：福州（样例），10</li> -->
+  </ul>
+<br>
+<br>
+<br>
+<br>
+<p>
+给一个元素添加内容，可以用innerHTML 也可以用document.currentElement()。这俩个方法在不同的浏览器中性能正好相反。如果您有不同的想法。欢迎review！
+</p><br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:10px; color:#999;">如果您学到了，请点个赞，您的支持是我们团队最大的动力！</p>
+
+<script type="text/javascript">
+
+var aqiData = [
+  ["北京", 90],
+  ["上海", 50],
+  ["福州", 10],
+  ["广州", 50],
+  ["成都", 90],
+  ["西安", 100]
+];
+
+(function () {
+
+	var oCity = document.getElementById('aqi-list');
+	var str = '';
+	for( var i=0; i<aqiData.length; i++ )//数组的length属性  是表示数组的长度
+	{ 
+		if( aqiData[i][1] > 60 )//js里面的下标是从0开始的。第一位就是0 依次 1 2 3 ···。
+		{ 
+			str += '<li>'+aqiData[i][0]+'</li>'; // +=  表示累加。
+		}
+	};
+	oCity.innerHTML = str;//记得循环完了以后先把内容放到一个字符串当中。然后循环结束以后一起添加到元素中。这样可以提高性能。
+  /*
+  在注释下方编写代码
+  遍历读取aqiData中各个城市的数据
+  将空气质量指数大于60的城市显示到aqi-list的列表中
+  */
+
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+
+<p>
+	大体思路就是获取b标签里面的数字，进行大小的比较， 最简单的比较方法就是  前一个和后一个比较，大的放在小的后面，依次往后排序。排序完成把城市对应起来就Ok了。这里有个细节就是元素取出来的值都是字符串形式。所以需要先转成数字的类型。
+	如果您有不同的想法。欢迎review！
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:10px; color:#999;">如果您学到了，请点个赞，您的支持是我们团队最大的动力！</p>
+
+<script type="text/javascript">
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+function getData() {
+  /*
+  coding here
+  */
+  	var oSource = document.getElementById('source');
+	var aLi = oSource.getElementsByTagName('li');
+	var aB = oSource.getElementsByTagName('b');
+	
+	var data = [];//先创建一个新数组,里面准备放数据
+	
+	for( var i=0; i<aLi.length; i++ )
+	{ 
+		//进行循环然后， 把数据放在数组里面
+		
+		data.push( [ aLi[i].innerHTML.substring(0,7) , parseInt(aB[i].innerHTML) ] );//数组的push方法是给数组里面添加数据,substring 是字符串的截取方法。
+	};
+	
+	//循环完以后数组里面就是这样的格式
+	/*data = [ 
+		[ '北京天气空气质量：' ， 90 ],
+		[ '上海天气空气质量：' ，70 ]
+		……
+	]
+	*/
+  /*
+  data = [
+    ["北京", 90],
+    ["北京", 90]
+    ……
+  ]
+  */
+
+  return data;
+
+}
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+	if( data.length <=1 )
+	{ 
+		return data;
+	}
+	var len = data.length;
+	var center = Math.floor(len/2);
+	var index = data.splice( center , 1);
+	var num = index[0][1];
+	var left = [];
+	var right = [];
+	
+	for( var i=0; i<data.length; i++)
+	{ 
+		
+		if( data[i][1] < num )
+		{ 
+			left.push( [ data[i][0],data[i][1] ] );	
+		}else
+		{ 
+			right.push([data[i][0],data[i][1]]);
+		};
+		
+		
+	};//我这里是用的快速排序。可以去百度下快速排序的原理 。
+	
+	return sortAqiData( left ).concat( index , sortAqiData( right ) );
+}
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ */
+function render(data) {
+	var oResort = document.getElementById('resort');
+	
+	var str = '';
+	for( var i=0; i<data.length; i++ )
+	{ 
+		str += '<li>'+data[i][0]+'<b>'+data[i][1]+'</b></li>';
+	};
+	oResort.innerHTML = str;
+}
+
+function btnHandle() {
+  var aqiData = getData();//这里是数据
+  aqiData = sortAqiData(aqiData);//这里是排序以后的数据
+  render(aqiData);
+}
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+  var oBtn = document.getElementById('sort-btn');
+  oBtn.onclick = function()
+  { 
+  	btnHandle();	
+  };
+
+}
+
+init();
+//从大到小 只需要把 sortAqiData（） 方法里面的小于号 换成大于号就可以  可以利用传参
+
+
+</script>
+</body>
+</html>

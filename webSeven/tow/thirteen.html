@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+
+
+
+
+<p>
+	（function(){}）（）这样的格式属于js里面的闭包形式，是一个函数自执行的过程。用这个形式的时候要注意一个问题，就是作用域的问题。如果你的变量是写在其他的兄弟函数里面，是访问不到这个变量的，除非你创建的是全局的变量。注意window.onload = function（）{}这也是函数。
+	如果您有不同的想法。欢迎review！
+</p>
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p style="font-size:10px; color:#999;">如果您学到了，请点个赞，您的支持是我们团队最大的动力！</p>
+<script type="text/javascript">
+
+(function() {
+	var oInp = document.getElementById('aqi-input');
+	var oBtn = document.getElementById('button');
+	var oText = document.getElementById('aqi-display');//获取元素的id方法
+	
+	oBtn.onclick = function(){
+		if( oInp.value === '' )//obj.value   这是获取input的value值。
+		{ 
+			alert('请输入文字');
+		}else
+		{ 
+			oText.innerHTML = oInp.value + '级' ;//innerHTML 是js自带的方法。意思元素的html。 可以添加 也可以获取。
+		};
+	};
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+
+})();
+
+</script>
+</body>
+</html>
