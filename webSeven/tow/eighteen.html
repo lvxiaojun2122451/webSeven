@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.main{
+			margin: 0 auto;
+			text-align: center;
+		}
+		.another{
+			margin: 30px auto;
+			text-align: center;
+		}
+		button{
+			border-radius: 5px;
+		}
+		ul {
+			display: block;
+			list-style: none;
+			}
+		li{
+			float: left;
+			display: inline-block;
+			margin: 0 20px;
+			padding: 0 10px;
+			width: auto;
+			height: 20px;
+			color: #fff;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<input type="text" id="ipt">
+		<button id="b1">左侧入</button>
+		<button id="b2">右侧入</button>
+		<button id="b3">左侧出</button>
+		<button id="b4">右侧出</button>
+	</div>
+	<div class="another">
+		<ul id="list">
+			
+		</ul>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var b1=document.getElementById('b1');
+			var b2=document.getElementById('b2');
+			var b3=document.getElementById('b3');
+			var b4=document.getElementById('b4');
+			var list=document.getElementById("list");
+			var ipt=document.getElementById("ipt");
+
+			b1.onclick=function(){
+				var newli=document.createElement("li");
+				newli.innerText=ipt.value;
+				
+				list.insertBefore(newli,list.childNodes[0]);
+			}
+			b2.onclick=function(){
+				var newli=document.createElement("li");
+				newli.innerText=ipt.value;
+				list.appendChild(newli);
+			}
+			b3.onclick=function(){
+				list.removeChild(list.childNodes[0]);
+			}
+			b4.onclick=function(){
+				list.removeChild(list.lastChild);
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>
