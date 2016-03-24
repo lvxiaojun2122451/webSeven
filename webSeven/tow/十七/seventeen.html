@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+   
+  </head>
+<style>
+*{ margin:0px; padding:0px;}
+.aqi-chart-wrap:after{ content:""; display:block; clear:both;}
+</style>
+<body>
+  <fieldset id="form-gra-time"  action="" method="get">
+    <legend>请选择日期粒度：</legend>
+    <label>日<input name="date" value="day" type="radio" checked="checked"></label>
+    <label>周<input name="date" value="week" type="radio"></label>
+    <label>月<input name="date" value="month" type="radio"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>请选择查看的城市：</legend>
+    <select id="city-select"></select>
+  </fieldset>
+
+  <div class="aqi-chart-wrap">
+  </div>
+  <br>
+<br>
+<br>
+<p>
+	希望大牛多多提意见！！
+</p>
+   <script src="task.js"></script>
+</body>
+</html>
