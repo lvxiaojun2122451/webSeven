@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>task-23</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<style>
+*{ margin:0px; padding:0px;}
+.box , .towBox , .threeBox , .fourBox{ 
+	display:box;
+	display:-webkit-box;
+	padding:30px 0px;
+	border:solid 1px #333;
+	-webkit-box-pack:justify;
+	box-sizing:border-box;
+	background:#fff;	
+}
+.box{ width:70%; margin:50px auto;}
+.towBox{ width:40%;}
+.threeBox{ width:40%;}
+.fourBox{ width:20%;}
+p{ text-align:center;}
+input{ text-align:center; margin-top:30px;}
+</style>
+</head>
+<body>
+<p>
+	<input type="button" value="前循" id="btn1">
+	<input type="button" value="中循" id="btn2">
+	<input type="button" value="后循" id="btn3">
+	<input type="text" value="cat" id="btn4">
+	<input type="button" value="搜索" id="btn5">
+</p>
+<div id="box">
+	<div class="box">
+		animal
+		<div class="towBox">
+			pig
+			<div class="threeBox">
+				dog
+				<div class="fourBox">cat</div>
+				<div class="fourBox">cat</div>
+			</div>
+			<div class="threeBox">
+				tiger
+				<div class="fourBox">cat</div>
+				<div class="fourBox">cat</div>
+			</div>
+		</div>
+		<div class="towBox">
+			pig
+			<div class="threeBox">
+				bird
+				<div class="fourBox">pig</div>
+				<div class="fourBox">cat</div>
+			</div>
+			<div class="threeBox">
+				tiger
+				<div class="fourBox">cat</div>
+				<div class="fourBox">cat</div>
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		animal
+		<div class="towBox">
+			pig
+			<div class="threeBox">
+				dog
+				<div class="fourBox">cat</div>
+				<div class="fourBox">cat</div>
+			</div>
+			<div class="threeBox">
+				tiger
+				<div class="fourBox">cat</div>
+				<div class="fourBox">cat</div>
+			</div>
+		</div>
+		<div class="towBox">
+			pig
+			<div class="threeBox">
+				bird
+				<div class="fourBox">pig</div>
+				<div class="fourBox">cat</div>
+			</div>
+			<div class="threeBox">
+				tiger
+				<div class="fourBox">cat</div>
+				<div class="fourBox">cat</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="task.js"></script>
+
+</body>
+</html>

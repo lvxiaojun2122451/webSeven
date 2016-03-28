@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>task-22</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<style>
+*{ margin:0px; padding:0px;}
+.box , .towBox , .threeBox , .fourBox{ 
+	display:box;
+	display:-webkit-box;
+	padding:30px;
+	border:solid 1px #333;
+	-webkit-box-pack:justify;
+	box-sizing:border-box;
+	background:#fff;	
+}
+.box{ width:70%; margin:100px auto;}
+.towBox{ width:49%;}
+.threeBox{ width:48%;}
+.fourBox{ width:49%;}
+p{ text-align:center;}
+input{ text-align:center; margin-top:30px;}
+</style>
+</head>
+<body>
+<p>
+	<input type="button" value="前循" id="btn1">
+	<input type="button" value="中循" id="btn2">
+	<input type="button" value="后循" id="btn3">
+</p>
+<div id="box">
+<div class="box">
+	<div class="towBox">
+		<div class="threeBox">
+			<div class="fourBox"></div>
+			<div class="fourBox"></div>
+		</div>
+		<div class="threeBox">
+			<div class="fourBox"></div>
+			<div class="fourBox"></div>
+		</div>
+	</div>
+	<div class="towBox">
+		<div class="threeBox">
+			<div class="fourBox"></div>
+			<div class="fourBox"></div>
+		</div>
+		<div class="threeBox">
+			<div class="fourBox"></div>
+			<div class="fourBox"></div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="task.js"></script>
+
+</body>
+</html>
