@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="function.js"></script>
+<style>
+*{ margin:0px; padding:0px;}
+body{ height:2000px;}
+input{ width:120px; height:30px;}
+.pic{ border:solid 2px #f60; position:fixed; z-index:2;}
+.pic .title{ height:50px; line-height:50px; background:#ddd; text-indent:24px; color:#000; }
+.pic .operation{ height:80px; line-height:40px; position:relative; background:#ddd;}
+.pic .content{ background:#fff;}
+.pic .confirm , .pic .cancle{ width:100px; height:50%; position:absolute; top:25%; background:#3385FF; cursor:pointer; text-align:center; color:#fff; font-size:16px;}
+.pic .cancle{ right:20px;}
+.pic .confirm{ right:140px;}
+.mask{ position:fixed; width:100%; height:100%; background:rgba(0,0,0,0.5); left:0px; top:0px; z-index:1;}
+</style>
+</head>
+
+<body>
+<input type="button" value="弹出窗口一" />
+<input type="button" value="弹出窗口二" />
+<input type="button" value="这个是最全的接口" />
+<!--<div class="pic">
+	<div class="title">这是标题</div>
+	<div class="content"></div>
+	<div class="operation">
+		<div class="confirm">确定</div>
+		<div class="cancle">取消</div>
+	</div>
+</div>-->
+
+</body>
+</html>
+<script>
+
+window.onload = function(){ 
+	var aIpt = document.getElementsByTagName('input');
+	
+	aIpt[0].onclick = function(){ 
+	
+		var pic = new Popup();
+		pic.init({
+			iNow : 0 , 
+			title : '俩只蝴蝶'
+		});
+	}
+	aIpt[1].onclick = function(){ 
+	
+		var pic = new Popup();
+		pic.init({ 
+			iNow : 0 ,
+			title : '俩只老鼠',
+			width : 300,
+			height : 300,
+			position : 'center',
+			isMask : true
+		});
+	}
+	//
+	aIpt[2].onclick = function(){ 
+	
+		var pic = new Popup();
+		pic.init({ 
+			iNow : 0 ,
+			title : '俩只蜗牛', 
+			width : 400,
+			height : 400,
+			position : [100 , 100],
+			isDarg : true,//是否能拖动
+			isMask : true //是否有遮罩层
+		});
+	}
+};
+//弹出层的UI组件
+function Popup(){
+	this.pic = null;
+	this.mask = null; 
+	this.setings = {
+		title : '添加标题', 
+		width : 500,
+		height : 500,
+		position : 'left',
+		isDarg : false,
+		isMask : false 
+	};
+};	
+Popup.prototype.json = {};
+	
+Popup.prototype.init = function( json ){ 
+	extend( this.setings , json );
+	if( this.json[json.iNow] === undefined ){ 
+		this.json[json.iNow] = true;
+	}
+	
+	if( this.json[json.iNow] ){ 
+			this.aqiRender();
+			
+			if( this.setings.isMask ){ 
+				this.aqiMask();
+			};
+			this.aqiClickClose();
+			
+			if( this.setings.isDarg ){ 
+				this.aqiDarg();
+			}
+			
+			this.json[json.iNow] = false;
+			
+	}
+	
+
+};
+Popup.prototype.aqiRender = function(){
+	var _this = this; 
+	this.pic = document.createElement('div');
+	
+	this.pic.className = 'pic';
+	this.pic.style.width = this.setings.width+'px';
+	this.pic.style.height = this.setings.height + 'px';
+	
+	if( this.setings.position === 'center' ){
+		this.pic.style.left = (viewWindow('width')-this.setings.width)/2 + 'px';
+		this.pic.style.top = (viewWindow('height') - this.setings.height)/2 + 'px';
+	}else if( this.setings.position === 'left' ){ 
+		this.pic.style.left = (viewWindow('width')-this.setings.width) + 'px';
+		this.pic.style.top = (viewWindow('height') - this.setings.height) + 'px';
+	}else if( this.setings.position === 'top' ){ 
+		this.pic.style.left = 0 + 'px';
+		this.pic.style.top = 0 + 'px';
+	}else if( this.setings.position.constructor === Array ){ 
+		for( var i=0; i<this.setings.position.length; i++ ){ 
+			this.pic.style.left = parseInt(this.setings.position[0]) + 'px';
+			this.pic.style.top = parseInt(this.setings.position[1]) + 'px'
+		}
+	};
+	
+	this.pic.innerHTML = '<div class="title">'+this.setings.title+'</div><div class="content" style="height:'+(this.setings.height-130)+'px"></div><div class="operation"><div class="confirm">确定</div><div class="cancle">取消</div></div>';	
+	document.body.appendChild(this.pic);
+	
+};
+Popup.prototype.aqiMask = function(){ 
+	
+	this.mask = document.createElement('div');
+	
+	this.mask.className = 'mask';
+	document.body.appendChild(this.mask);	
+};
+Popup.prototype.aqiClose = function(){
+	document.body.removeChild( this.pic );
+	if( this.mask ){ 
+		document.body.removeChild( this.mask )
+	};
+	this.json[this.setings.iNow] = true;
+};
+Popup.prototype.aqiClickClose = function(){
+	var _this = this;
+	var oConfirm = getByClass( this.pic , 'div' , 'confirm')[0];
+	var oCancle = getByClass( this.pic , 'div' , 'cancle')[0];
+	
+	oConfirm.onclick = oCancle.onclick = function(){ 
+		_this.aqiClose();
+	};
+	
+	if( this.mask ){ 
+		this.mask.onclick = function(){ 
+			_this.aqiClose();
+		}
+	};		
+};
+Popup.prototype.aqiDarg = function(){
+	var _this = this; 
+	this.pic.onmousedown = function( ev ){ 
+		var ev = ev || event;
+		var x = ev.clientX - _this.pic.offsetLeft;
+		var y = ev.clientY - _this.pic.offsetTop;
+		
+		document.onmousemove = function( ev ){ 
+			var ev = ev || event;
+			var oX = ev.clientX - x;
+			var oY = ev.clientY - y;
+			if( oX < 0 ){ 
+				oX = 0;
+			}else if( oX > viewWindow('width') - _this.pic.offsetWidth ){ 
+				oX = viewWindow('width') - _this.pic.offsetWidth;
+			};
+			if( oY < 0 ){ 
+				oY = 0;
+			}else if( oY > viewWindow('height') - _this.pic.offsetHeight ){ 
+				oY = viewWindow('height') - _this.pic.offsetHeight
+			};
+			_this.pic.style.left = oX + 'px';
+			_this.pic.style.top = oY + 'px';
+		};
+		document.onmouseup = function(){ 
+			document.onmousemove = null;
+			document.onmouseup = null;
+		};
+		return false;
+	};
+};
+	
+
+//简易拷贝继承函数	
+function extend( childrenObj , parentObj ){ 
+	for(var attr in parentObj ){ 
+		childrenObj[attr] = parentObj[attr];
+	};
+};
+
+</script>
