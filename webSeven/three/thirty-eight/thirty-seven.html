@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>三十八</title>
+<script src="function.js"></script>
+<style>
+*{ margin:0px; padding:0px;}
+table{ background:#ddd;}
+thead td{ background:#333; color:#fff;}
+td{ padding:10px 30px; text-align:center; position:relative; background:#fff;}
+td span{ display:block; position:absolute; right:5px; height:80%; width:16px; top:10%;}
+td span a{ display:block; height:30%; width:0px; box-sizing:border-box;}
+td span a:nth-of-type(1){ border-left:8px solid transparent;  border-right:8px solid transparent; border-bottom:10px solid #fff; margin-bottom:50%;}
+td span a:nth-of-type(2){ border-left:8px solid transparent;  border-right:8px solid transparent; border-top:10px solid #fff;  margin-top:50%;}
+td span a:nth-of-type(1):hover{ border-bottom-color:#f60;}
+td span a:nth-of-type(2):hover{ border-top-color:#f60;}
+table{ margin:100px auto;}
+</style>
+</head>
+
+<body>
+	<p style="text-align:center;">默认排序为总分</p>
+</body>
+</html>
+<script>
+
+window.onload = function(){ 
+	var table1 = new DataTable();
+	table1.init({
+		title : ['姓名','语文','数学','英语','地理','总分'],
+		data : [ 
+			['小红',99,67,134,56,345],
+			['小明',93,12,56,45,99],
+			['老王',59,89,95,77,100]
+		],
+		dataSort : '总分',//默认以什么排序
+		iTarget : true//默认是从小到大。  false为从大到小
+	});
+};
+
+function DataTable(){
+	
+	this.table = createElement('table');
+	this.table.cellSpacing=1;
+	this.table.cellPadding=1;
+	 
+	this.setings = { 
+		/*title : ['姓名','语文','数学','英语','地理','总分'],
+		data : [ 
+			['小红',99,67,134,56,345],
+			['小明',93,12,56,45,99],
+			['老王',59,89,95,77,100]
+		],
+		dataSort : '总分',
+		iTarget : true*/
+	};
+};
+DataTable.prototype.init = function( json ){
+	var _this = this; 
+	extend( this.setings , json );
+	
+	this.aqiIndex( this.setings.dataSort );	
+	this.aqiRender();
+	
+	this.table.onclick = function( ev ){
+		var ev = ev || event;
+		var evSrc = ev.srcElement || ev.target;
+		_this.aqiClick( evSrc );
+		_this.aqiRender();
+	};
+};
+
+//渲染图表
+DataTable.prototype.aqiRender = function(){
+	this.aqiSortData().aqiDom();
+	return this;
+};
+
+//进行匹配
+DataTable.prototype.aqiIndex = function( str ){ 
+	for( var i=0; i<this.setings.title.length; i++ ){ 
+		if( str === this.setings.title[i] ){ 
+			this.setings['index'] = i;
+			break;
+		}
+	};
+};
+//点击排序
+DataTable.prototype.aqiClick = function( ev ){ 
+	if( ev.className == 'top' ){ 
+		//var str = ev.
+		this.setings.iTarget = false;
+		var str = ev.parentNode.getAttribute('index');
+		this.aqiIndex( str );
+		
+	}else if( ev.className == 'bottom' ){ 
+		this.setings.iTarget = true;
+		var str = ev.parentNode.getAttribute('index');
+		this.aqiIndex( str );
+	}else{ 
+		//return;
+	}
+};
+
+//数据的排序
+DataTable.prototype.aqiSortData = function(){
+	var arr = this.setings.data;
+	var indexArr = [];
+	//总成绩计算
+	for(var i=0; i<arr.length; i++){ 
+		addArr( arr[i] )
+	}; 
+	//对应科目成绩数据
+	for(var i=0; i<arr.length; i++ ){ 
+		indexArr.push( arr[i][ this.setings.index ] )
+	};
+	
+	var sortArr = aqiSort(indexArr , this.setings.iTarget );
+	console.log( sortArr )
+	var lastSort = aqiIndex( sortArr , indexArr);
+	this.setings.data = [];
+	
+	for( var i=0; i<lastSort.length; i++ ){
+		this.setings.data.push( arr[lastSort[i] ] )
+	};
+	return this
+};
+
+//创建Dom元素
+DataTable.prototype.aqiDom = function(){
+	this.table.innerHTML = '';
+	var arr = this.setings.data;
+	
+	//创建thead
+	var thead = createElement('thead');
+	var theadtr = createElement('tr');
+	for( var i=0; i<this.setings.title.length; i++ ){ 
+		var theadtd = createElement('td');
+		if( i==0 ){ 
+			theadtd.innerHTML = '姓名:';
+		}else{ 
+			theadtd.innerHTML = this.setings.title[i] + '<span index='+this.setings.title[i]+'><a class="top" href="javascript:void(0);"></a><a class="bottom" href="javascript:void(0);"></a></span>';
+		};
+		theadtr.appendChild( theadtd );
+	};
+	thead.appendChild( theadtr );
+
+	
+	//创建tbody
+	var tbody = createElement('tbody');
+	for(var i=0; i<arr.length; i++ ){ 
+		var tbodytr = createElement('tr');
+		createTd( tbodytr , arr[i] )
+		tbody.appendChild( tbodytr )
+	}	
+		
+	this.table.appendChild( thead );
+	this.table.appendChild( tbody );
+	
+	document.body.appendChild( this.table );
+	
+	return this;
+};
+
+//计算排序索引值
+function aqiIndex( arr1 , arr2 ){
+	var arr = [];
+	for( var i=0; i<arr1.length; i++ ){
+		 
+		for(var j=0; j<arr2.length; j++ ){ 
+			if( arr2[j] == arr1[i] ){ 
+				arr.push(j)
+			}
+		};
+		
+	};
+	return arr;
+};
+
+
+//计算总成绩
+function addArr( arr ){
+	var num = 0; 
+	for(var i=0; i<arr.length; i++){ 
+		if( i>0 && i<arr.length-1 ){ 
+			num += arr[i]
+		};
+	};
+	arr[arr.length-1] = num;
+}
+
+//创建tbody里面的td
+function createTd( parent , arr ){ 
+	for( var i=0; i<arr.length; i++ ){ 
+		
+		var td = document.createElement('td');
+		td.innerHTML = arr[i];
+		parent.appendChild( td );
+	};
+};
+//创建元素
+function createElement( obj ){ 
+	return document.createElement( obj );
+};
+//简易拷贝继承函数	
+function extend( childrenObj , parentObj ){ 
+	for(var attr in parentObj ){ 
+		childrenObj[attr] = parentObj[attr];
+	};
+};
+
+</script>
