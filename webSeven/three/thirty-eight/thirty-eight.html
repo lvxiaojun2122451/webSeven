@@ -31,8 +31,23 @@ window.onload = function(){
 		title : ['姓名','语文','数学','英语','地理','总分'],
 		data : [ 
 			['小红',99,67,134,56,345],
-			['小明',93,12,56,45,99],
-			['老王',59,89,95,77,100]
+			['小件',234,12,56,45,99],
+			['静静',45,89,95,77,100],
+			['雯雯',93,34,12,222,99],
+			['爽爽',59,89,95,77,100],
+			['可可',563,12,2,45,99],
+			['宝宝',34,89,95,333,100],
+			['妞妞',93,12,56,45,99],
+			['庄庄',59,89,95,34,100],
+			['玲玲',23,12,3,45,99],
+			['笑笑',59,445,95,56,100],
+			['吱吱',1212,12,56,45,99],
+			['吼吼',23,23,3,100],
+			['老虎',123,12,56,45,99],
+			['老牛',59,89,95,444,100],
+			['老大',93,12,56,45,99],
+			['不小',59,89,95,77,100],
+			['利民',59,89,95,77,100]
 		],
 		dataSort : '总分',//默认以什么排序
 		iTarget : true//默认是从小到大。  false为从大到小
@@ -60,7 +75,8 @@ DataTable.prototype.init = function( json ){
 	var _this = this; 
 	extend( this.setings , json );
 	
-	this.aqiIndex( this.setings.dataSort );	
+	this.aqiIndex( this.setings.dataSort );
+		
 	this.aqiRender();
 	
 	this.table.onclick = function( ev ){
@@ -73,7 +89,11 @@ DataTable.prototype.init = function( json ){
 
 //渲染图表
 DataTable.prototype.aqiRender = function(){
-	this.aqiSortData().aqiDom();
+	
+	this.aqiSortData();
+	
+	this.aqiDom();
+	
 	return this;
 };
 
@@ -110,17 +130,18 @@ DataTable.prototype.aqiSortData = function(){
 	//总成绩计算
 	for(var i=0; i<arr.length; i++){ 
 		addArr( arr[i] )
-	}; 
+	};
+	
 	//对应科目成绩数据
 	for(var i=0; i<arr.length; i++ ){ 
 		indexArr.push( arr[i][ this.setings.index ] )
 	};
 	
 	var sortArr = aqiSort(indexArr , this.setings.iTarget );
-	console.log( sortArr )
+	console.log( sortArr );
+	
 	var lastSort = aqiIndex( sortArr , indexArr);
 	this.setings.data = [];
-	
 	for( var i=0; i<lastSort.length; i++ ){
 		this.setings.data.push( arr[lastSort[i] ] )
 	};
@@ -131,7 +152,6 @@ DataTable.prototype.aqiSortData = function(){
 DataTable.prototype.aqiDom = function(){
 	this.table.innerHTML = '';
 	var arr = this.setings.data;
-	
 	//创建thead
 	var thead = createElement('thead');
 	var theadtr = createElement('tr');
@@ -149,7 +169,8 @@ DataTable.prototype.aqiDom = function(){
 	
 	//创建tbody
 	var tbody = createElement('tbody');
-	for(var i=0; i<arr.length; i++ ){ 
+	for(var i=0; i<arr.length; i++ ){
+		
 		var tbodytr = createElement('tr');
 		createTd( tbodytr , arr[i] )
 		tbody.appendChild( tbodytr )
@@ -167,11 +188,12 @@ DataTable.prototype.aqiDom = function(){
 function aqiIndex( arr1 , arr2 ){
 	var arr = [];
 	for( var i=0; i<arr1.length; i++ ){
-		 
-		for(var j=0; j<arr2.length; j++ ){ 
+		for(var j=0; j<arr2.length; j++ ){
 			if( arr2[j] == arr1[i] ){ 
-				arr.push(j)
-			}
+				arr.push(j);
+				arr2.splice(j ,1 ,'存在');
+			};
+			
 		};
 		
 	};
