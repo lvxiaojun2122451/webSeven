@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>四十一</title>
+<script src="function.js"></script>
+<style>
+*{ margin:0px; padding:0px; border:0px; list-style:none; text-decoration:none;}
+
+.clear{ content:""; display:block; clear:both;}
+.clear{ zoom:1;}
+
+
+.input{ position:relative; width:400px; margin:0 auto;}
+.input input{ width:396px; height:40px; display:block; text-indent:5px; margin:50px auto 0; border:solid 1px #ddd;}
+.input button{ width:40px; height:40px; position:absolute; right:0px; top:0px; background:url(calender.png) no-repeat center center; cursor:pointer; border:0px;}
+
+.calendar{ width:400px; margin:0 auto; border:solid 1px red; }
+.calendar .bg1{	
+	background:-webkit-linear-gradient(top , #fff 0 , #ddd 100%);
+	background:-moz-linear-gradient(top , #fff 0 , #ddd 100%);
+	background:-ms-linear-gradient(top , #fff 0 , #ddd 100%);
+}
+
+.calendar li{ text-align:center; float:left; cursor:pointer;}
+
+.week{ 
+	height:30px;
+	line-height:30px;
+	border-bottom:solid 1px #999;
+}
+.week li{ width:14.2%; text-align:center;}
+.week li.active{ color:red;}
+
+.set{ height:80px; background:#eee; padding:10px; border-bottom:solid 1px #999;}
+.set .column{ height:40px; width:100%; line-height:40px; border:solid 1px #999; box-sizing:border-box; border-radius:6px;}
+.set .column ul{ height:100%; border-radius:6px;}
+.set .column li{ width:20%; height:100%;}
+.set .column ul li:nth-of-type(1){ border-radius:6px 0px 0px 6px;}
+.set .column ul li:nth-of-type(5){ border-radius:0px 6px 6px 0px;}
+.set .column ul li.active{
+	background:-webkit-linear-gradient(top , #0062B4 0 , #00A3EE 100%);
+	background:-moz-linear-gradient(top , #0062B4 0 , #00A3EE 100%);
+	background:-ms-linear-gradient(top , #0062B4 0 , #00A3EE 100%);
+	color:#fff;
+}
+
+.set .date{ position:relative; text-align:center; line-height:44px; font-size:16px; font-weight:bold;}
+.set .date a{ position:absolute; top:-2px; font-size:30px;}
+.set .date .left{ left:10px;}
+.set .date .right{ right:10px;}
+
+.dateBox{ overflow:hidden; display:none;}
+
+.dateList li{ width:14.288%; height:50px; line-height:50px; font-size:16px; font-weight:bold; box-sizing:border-box; border-bottom:solid 1px #999; border-right:solid 1px #999;}
+.dateList li:nth-of-type(7n){ border-right:0px;}
+.dateList li.active{
+	background:#008AD4;
+	color:#fff;
+	box-shadow:inset 1px 1px 5px #0061B8;
+}
+.dateList li.hover{ 
+	background:#008AD4;
+	color:#fff;
+	box-shadow:inset 1px 1px 5px #0061B8;	
+};
+
+.dateYear{padding:5px;}
+.dateYear ul{ overflow:hidden;}
+.dateYear ul li{ width:33.333%; height:100px; line-height:100px; margin-bottom:10px; box-sizing:border-box; padding:0px 5px;}
+.dateYear ul li>div{ width:100%; height:100%; border:solid 1px #0061B8;}
+.dateYear ul li>div:hover{ background:#0061B8; color:#fff;}
+.dateYear ul li.active>div{ background:#0061B8; color:#fff;}
+
+</style>
+</head>
+
+<body>
+<div class="input">
+<input type="text" id="ipt"  />
+<button id="btn"></button>
+</div>
+<div id="div">
+	
+</div>
+</body>
+</html>
+<script>
+window.onload = function(){ 
+	
+	var oIpt = document.getElementById('ipt');
+	var oBtn = document.getElementById('btn');
+	
+	var oDiv = document.getElementById('div');
+	var off = true;
+	
+	oBtn.onclick = function(){
+		var oCalendar = new Calendar(); 
+		if( off ){ 
+			oCalendar.init( oDiv ,{ 
+				getdata : function( data ){ 
+						oIpt.value = data;
+						oDiv.innerHTML = '';
+						off = true;
+					}
+			});
+		}else{ 
+			oDiv.innerHTML = '';
+		};
+		off = !off;
+	};
+	
+	
+};
+
+function Calendar(){
+	//初始化配置 
+	this.setings = {
+		getdata : null
+	};
+	this.getdate = [];
+	//日历数据列表选择
+	this.dataList = 1;
+	//添加日历的父级元素
+	this.parent = null;
+	//日历数据 -- 月天数
+	this.data = [];
+	//日历数据 -- 年
+	this.year = 0;
+	
+	
+};
+
+//初始化函数
+Calendar.prototype.init = function(id,options){ 
+	this.parent = id;
+	extend( this.setings , options);
+	//初始化数据
+	this.aqiRenderData();
+	
+	//创建Dom
+	this.createDom();
+	
+	//添加事件
+	//this.aqiListEvent();
+	
+};
+
+//创建DOM
+Calendar.prototype.createDom = function(){
+	
+	var _this = this;
+	this.parent.innerHTML = '';
+	
+	console.log( this.data )
+	
+	var str = '';
+	var str1 = '';
+	var str2 = '';
+	
+	var currentDate = 0;
+	var currentDate1 = 0;
+	var nextDate = 0;
+	var upDate = this.data[4] - this.data[3];
+	
+	var currentDay = 0;
+	
+	//日历title
+	var title = null;
+	
+	if( this.dataList === 0 ){ 
+		title = this.data[0]+'年';
+	}else if( this.dataList === 1 ){ 
+		title = title = this.data[0]+'年'+this.data[1] + '月';
+	}else if( this.dataList === 2 ){ 
+		title = '周';
+	}else if( this.dataList === 3 ){ 
+		title = '日';
+	}else{ 
+		title = '日程'
+	};
+	 
+	var oDiv = document.createElement('div');
+	oDiv.className = 'calendar';
+	oDiv.id = 'calendar';
+	
+	str += '<div>'	
+		str += '<div class="set">'
+			str += '<div class="column"><ul class="bg1 clear"><li>年</li><li>月</li><li>周</li><li>日</li><li>日程</li></ul></div>'
+			
+			str += '<div class="date"><a class="left" href="javascript:void(0);">&#8249;</a><span>'+title+'</span><a class="right" href="javascript:void(0);">&#8250;</a></div>'
+		str += '</div>'
+		
+		str += '<div class="dateBox clear"><div class="dateYear"><ul class="clear"></ul></div></div>'
+		
+		str += '<div class="dateBox clear"><ul class="week bg1"><li class="active">周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li class="active">周六</li></ul><div class="dateList"><ul class="clear"></ul></div></div><div class="dateBox clear"></div><div class="dateBox clear"></div><div class="dateBox clear"></div>'
+	str += '</div>'
+	
+	oDiv.innerHTML = str;
+	
+	//栏目高亮管理
+	var oColumnLi = getByClass(oDiv,'div','column')[0].getElementsByTagName('li');
+	var oColumnBox = getByClass(oDiv,'div','dateBox');
+	oColumnLi[this.dataList].className = 'active';
+	oColumnBox[this.dataList].style.display = 'block';
+	
+	//日期列表数据添加 -- 月天数	
+	for(var i=0; i<42; i++){ 
+		
+		if( this.data[3] != 0 ){ 
+			
+			if( i < this.data[3] ){ 
+				str1 += '<li style="color:#999;">'+ upDate +'</li>';
+				upDate++;
+			}else{ 
+				if( currentDate >= this.data[5] ){ 
+					currentDate1++;
+					str1 += '<li style="color:#999;">'+currentDate1+'</li>';
+				}else{ 
+					currentDate ++;
+					currentDate === this.data[2] ? str1 += '<li class="active" active="true">'+currentDate+'</li>' : str1 += '<li active="true">'+currentDate+'</li>';
+				};
+				
+			}
+			
+		}else{ 
+			if( currentDate >= this.data[5] ){ 
+				currentDate1++;
+				str1 += '<li style="color:#999;">'+currentDate1+'</li>';
+			}else{ 
+				currentDate ++;
+				currentDate === this.data[2] ? str1 += '<li class="active" active="true">'+currentDate+'</li>' : str1 += '<li active="true">'+currentDate+'</li>';
+			};
+		};
+	};
+	var oDateList = getByClass(oDiv,'div','dateList')[0].getElementsByTagName('ul')[0];
+	oDateList.innerHTML = str1;
+	
+	//日期列表数据添加 -- 年月数
+	for(var i=0; i<12; i++){
+		currentDay++;
+		currentDay == this.data[1] ? str2 += '<li class="active"><div>'+currentDay+'月</div></li>' : str2 += '<li><div>'+currentDay+'月</div></li>';
+	};
+	var oDateYear = getByClass(oDiv,'div','dateYear')[0].getElementsByTagName('ul')[0];
+	oDateYear.innerHTML = str2;
+	
+	//最终添加到日历的父级元素上面
+	this.parent.appendChild(oDiv);
+	
+	this.aqiListEvent();
+	this.aqiDateSwitch();
+	this.aqiYearClick();
+	this.aqiDateExport();
+	
+	return this;
+};
+
+//设置数据
+Calendar.prototype.setData = function(){ 
+	
+	var oDate = new Date( this.data[0] , this.data[1] ,0);
+	if( this.data[1] != 1 ){ 
+		var oDate1 = new Date( this.data[0] , (this.data[1]-1) , 0);
+	}else{ 
+		var oDate1 = new Date( (this.data[0]-1) , 12 , 0);
+	};
+	var oDate2 = new Date(this.data[0] , (this.data[1]-1) ,1);
+	
+	
+	var currentTian = oDate.getDate();
+	var nextTian = oDate1.getDate();
+	var currentZhou =  oDate2.getDay();
+	
+	this.data[3] = currentZhou;
+	this.data[4] = nextTian;
+	this.data[5] = currentTian;
+	
+	this.createDom();
+	return this;
+};
+
+//初始化数据
+Calendar.prototype.aqiRenderData = function(){ 
+	
+	var oDate = new Date();
+	
+	var y = oDate.getFullYear();
+	var d = oDate.getMonth();
+	var z = oDate.getDay();
+	var r = oDate.getDate();
+	
+	//上月总计天数
+	var oDate1 = new Date(y,(d),0);
+	//本月总计天数
+	var oDate2 = new Date(y,(d+1),0);
+	//本月1号为周几
+	var oDate3 = new Date(y,d,1);
+	var z = oDate3.getDay();
+	
+	this.data.push( y , (d+1) , r , z , oDate1.getDate() , oDate2.getDate() );
+	
+	return this;
+};
+
+//栏目列表添加事件
+Calendar.prototype.aqiListEvent = function(){ 
+	
+	var oDiv = document.getElementById('calendar');
+	var _this = this;
+	
+	//事件添加
+	var oColumnLi = getByClass(oDiv,'div','column')[0].getElementsByTagName('li');
+	
+	for(var i=0; i<oColumnLi.length; i++){
+		oColumnLi[i].index = i; 
+		oColumnLi[i].onclick = function(){ 
+			_this.dataList = this.index;
+			_this.createDom();
+		};
+	};
+	return this;
+};
+//日历切换日期添加事件
+Calendar.prototype.aqiDateSwitch = function(){
+	
+	var _this = this;
+	 
+	var oDiv = document.getElementById('calendar');
+	var oLeft = getByClass(oDiv,'div','date')[0].getElementsByTagName('a')[0];
+	var oRight = getByClass(oDiv,'div','date')[0].getElementsByTagName('a')[1];
+	
+	oLeft.onclick = function(){ 
+		if( _this.dataList === 0 ){ 
+			if( _this.data[0] === 1970 ){ 
+				_this.data[0] === 1970;
+			}else{ 
+				_this.data[0]--;
+			}
+		}else if( _this.dataList === 1 ){
+			if( _this.data[0] === 1970 && _this.data[1] === 1 ){ 
+				return;
+			}else if( _this.data[1] === 1 ){
+				_this.data[0] --;
+				_this.data[1] = 12;
+			}else{ 
+				_this.data[1]--;
+			}
+		};
+		_this.setData();
+	};
+	oRight.onclick = function(){ 
+		if( _this.dataList === 0 ){ 
+			if( _this.data[0] === 2050 ){ 
+				_this.data[0] === 2050;
+			}else{ 
+				_this.data[0]++;
+			}
+		}else if( _this.dataList === 1 ){
+			if( _this.data[0] === 2050 && _this.data[1] === 12 ){ 
+				return ;
+			}else if( _this.data[1] === 12 ){ 
+				_this.data[0] ++;
+				_this.data[1] = 1;
+			}else{ 
+				_this.data[1]++;
+			}
+		};
+		_this.setData();
+	};
+	return this;
+};
+
+//跨年点击事件
+Calendar.prototype.aqiYearClick = function(){
+	
+	var _this = this;
+	
+	var oDiv = document.getElementById('calendar'); 
+	var aLi = getByClass(oDiv,'div','dateYear')[0].getElementsByTagName('li');
+	
+	for(var i=0; i<aLi.length; i++){ 
+		aLi[i].index = i;
+		aLi[i].onclick = function(){ 
+			_this.data[1] = (this.index+1);
+			_this.dataList = 1;
+			_this.setData();
+		}
+	}
+	return this;
+};
+
+//日期接口数据
+Calendar.prototype.aqiDateExport = function(){
+	var _this = this; 
+	var oDiv = document.getElementById('calendar'); 
+	var aLi = getByClass(oDiv,'div','dateList')[0].getElementsByTagName('li');
+	
+	for(var i=0; i<aLi.length; i++){ 
+		
+		if( aLi[i].getAttribute('active') === 'true' ){ 
+			
+			if( i != (_this.data[2] + _this.data[3] - 1) ){ 
+				aLi[i].onmouseover = function(){
+					
+					this.className = 'active';
+				};	
+				aLi[i].onmouseout = function(){
+					 
+					this.className = '';
+				};
+			};
+			
+			
+			aLi[i].onclick = function(){ 
+				var arr = [];
+				arr.push( _this.data[0] );
+				arr.push( _this.data[1] );
+				arr.push( parseInt(this.innerHTML) );
+				_this.setings.getdata( arr );
+			};
+						
+		};
+		
+	};
+	return this;
+};
+
+function extend(obj1 , obj2){ 
+	for(var attr in obj2){ 
+		obj1[attr] = obj2[attr]
+	};
+};
+
+
+</script>
