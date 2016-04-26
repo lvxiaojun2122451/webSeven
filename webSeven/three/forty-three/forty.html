@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>四十三</title>
+<script src="function.js"></script>
+<style>
+*{ margin:0px; padding:0px; border:0px; list-style:none; text-decoration:none;}
+img{ display:block;}
+
+.clear{ content:""; display:block; clear:both;}
+.clear{ zoom:1;}
+.div{ width:100%; height:790px; position:relative; overflow:hidden;}
+.div .img{ overflow:hidden; float:left; position:absolute;}
+
+.tow .img:first-child{ width:100%; height:100%; -webkit-clip-path:polygon(0% 0% , 66.66% 0% , 33.33% 100% , 0% 100%); }
+.tow .img:last-child{ width:100%; height:100%; -webkit-clip-path:polygon(66.66% 0% , 100% 0% , 100% 100% , 33.33% 100%); }
+
+.three img{ float:left;}
+
+
+</style>
+</head>
+
+<body>
+<div id="div">
+
+	<div class="div">
+		<div class="img"><img src="a1.jpg" /></div>
+	</div>
+	
+	<div class="div">
+		<div class="img"><img src="a3.jpg" /></div>
+		<div class="img"><img src="a4.jpg" /></div>
+	</div>
+	
+	<div class="div">
+		<div class="img"><img src="a2.jpg" /></div>
+		<div class="img"><img src="a5.jpg" /></div>
+		<div class="img"><img src="a6.jpg" /></div>
+	</div>
+	
+	<div class="div">
+		<div class="img"><img src="a7.jpg" /></div>
+		<div class="img"><img src="a8.jpg" /></div>
+		<div class="img"><img src="a1.jpg" /></div>
+		<div class="img"><img src="a10.jpg" /></div>
+	</div>
+	
+	<div class="div">
+		<div class="img"><img src="a11.jpg" /></div>
+		<div class="img"><img src="a12.jpg" /></div>
+		<div class="img"><img src="a3.jpg" /></div>
+		<div class="img"><img src="a4.jpg" /></div>
+		<div class="img"><img src="a5.jpg" /></div>
+	</div>
+	
+	<div class="div">
+		<div class="img"><img src="a6.jpg" /></div>
+		<div class="img"><img src="a7.jpg" /></div>
+		<div class="img"><img src="a8.jpg" /></div>
+		<div class="img"><img src="a13.jpg" /></div>
+		<div class="img"><img src="a14.jpg" /></div>
+		<div class="img"><img src="a3.jpg" /></div>
+	</div>
+
+
+
+</div>
+
+</body>
+</html>
+<script>
+window.onload = function(){ 
+	
+	var oDiv = document.getElementById('div');
+	
+	var imgs = new MuPhoto();
+	imgs.init({ 
+		id : oDiv
+	});
+};
+function MuPhoto(){
+	//配置参数 
+	this.settings = { 
+		id : null
+	};
+	//初始尺寸
+	this.size = { 
+		width100 : viewWindow('width'),
+		height100 : viewWindow('height'),
+		height50 : viewWindow('height')/2,
+		width50 : viewWindow('width')/2,
+		width30 : viewWindow('width')/3,
+		height30 : viewWindow('height')/3
+	};
+};
+//初始化
+MuPhoto.prototype.init = function(options){
+	extend(this.settings , options);
+	this.aqiBase();
+};
+
+//
+MuPhoto.prototype.aqiBase = function(){ 
+	var aDiv = getByClass( this.settings.id , 'div' , 'div');
+	var _this = this;
+	
+	for(var i=0; i<aDiv.length; i++){
+		if( i === 0 ){ 
+			addClass( aDiv[i] , 'one' );
+		}else if( i === 1 ){ 
+			addClass( aDiv[i] , 'tow' );
+		}else if( i === 2 ){ 
+			addClass( aDiv[i] , 'three' );
+		}else if( i === 3 ){ 
+			addClass( aDiv[i] , 'fory' );
+		}else if( i === 4 ){ 
+			addClass( aDiv[i] , 'five' );
+		}else if( i === 5 ){ 
+			addClass( aDiv[i] , 'six' );
+		};
+		aDiv[i].style.width = this.size.width100 + 'px';
+		aDiv[i].style.height = this.size.height100 + 'px';
+		size( aDiv[i] , i);
+	};
+	function size( obj , index ){ 
+		
+		var aDiv = getByClass( obj , 'div' , 'img');
+		
+		if( index === 1 ){ 
+			
+			for(var i=0; i<aDiv.length; i++){
+				
+				aDiv[i].style.width = '100%';
+				aDiv[i].style.height = '100%';
+				aDiv[i].style.left = '0px';
+				aDiv[i].style.top = '0px';
+			};
+			
+		}else if( index === 2 ){ 
+			
+			aDiv[0].style.width = (_this.size.width100 - _this.size.height50) + 'px';
+			aDiv[0].style.height = '100%';
+			aDiv[0].style.left = '0px';
+			aDiv[0].style.top = '0px';
+			
+			
+			aDiv[1].style.width = (_this.size.height50) + 'px';
+			aDiv[1].style.height = (_this.size.height50) + 'px';
+			aDiv[1].style.left = (_this.size.width100 - _this.size.height50) + 'px';
+			aDiv[1].style.top = '0px';
+			
+			aDiv[2].style.width = (_this.size.height50) + 'px';
+			aDiv[2].style.height = (_this.size.height50) + 'px';
+			aDiv[2].style.left = (_this.size.width100 - _this.size.height50) + 'px';
+			aDiv[2].style.top = (_this.size.height50) + 'px';
+		}else if( index === 3 ){ 
+			for(var i=0; i<aDiv.length; i++){ 
+				
+				aDiv[i].style.width = (_this.size.width50) + 'px';
+				aDiv[i].style.height = (_this.size.height50) + 'px';
+				aDiv[i].style.position = 'static';
+			}
+		}else if( index === 4 ){ 
+			
+			aDiv[0].style.width = (_this.size.width30)*2 + 'px';
+			aDiv[0].style.height = (_this.size.height30)*2 + 'px';
+			aDiv[0].style.top = '0px';
+			aDiv[0].style.left = '0px';
+			
+			aDiv[1].style.width = (_this.size.width30) + 'px';
+			aDiv[1].style.height = (_this.size.width30) + 'px';
+			aDiv[1].style.top = '0px';
+			aDiv[1].style.left = (_this.size.width30)*2  + 'px';
+			
+			aDiv[2].style.width = (_this.size.width30) + 'px';
+			aDiv[2].style.height = (_this.size.height30) + 'px';
+			aDiv[2].style.top = (_this.size.height30)*2 + '0px';
+			aDiv[2].style.left = '0px';
+			
+			aDiv[3].style.width = (_this.size.width30) + 'px';
+			aDiv[3].style.height = (_this.size.height30) + 'px';
+			aDiv[3].style.top = (_this.size.height30)*2 + '0px';
+			aDiv[3].style.left = (_this.size.width30) + 'px';
+			
+			aDiv[4].style.width = (_this.size.width30) + 'px';
+			aDiv[4].style.height = ( _this.size.height100 - _this.size.width30) + 'px';
+			aDiv[4].style.top = (_this.size.width30) + '0px';
+			aDiv[4].style.left = (_this.size.width30)*2 + 'px';
+			
+		}else if( index === 5 ){ 
+			for(var i=0; i<aDiv.length; i++){ 
+				aDiv[i].style.position = 'static';
+				
+				if( i === 0 ){ 
+					aDiv[0].style.width = (_this.size.width30)*2 + 'px';
+					aDiv[0].style.height = (_this.size.height30)*2 + 'px';
+				}else{ 
+					aDiv[i].style.width = (_this.size.width30) + 'px';
+					aDiv[i].style.height = (_this.size.height30) + 'px';
+				}
+				
+			}
+		};
+		
+	};
+};
+
+
+function extend( obj1 , obj2 ){ 
+	for(var attr in obj2){ 
+		obj1[attr] = obj2[attr];
+	};
+};
+
+</script>
+
