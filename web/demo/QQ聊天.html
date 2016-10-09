@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QQ</title>
+<style>
+*{ margin:0; padding:0; border:0; outline:none;}
+#qq{ 
+	width:500px;
+	height:500px;
+	border:solid 1px #2EA2CD;
+	margin:0 auto;
+	margin-top:30px;
+	box-sizing:border-box;
+	overflow-y:scroll;
+}
+.text{ padding:10px; position:relative;     clear: both;}
+.img{display:block; position:absolute; width:30px; height:30px; border-radius:6px; overflow:hidden;}
+.img img{ max-height:100%; max-width:100%; }
+.left .img{left:0; }
+.left .p{margin-left:40px; float:left;}
+.right .img{right:0; }
+.right .p{margin-right:40px; float:right; }
+.p{ padding:10px; box-sizing:border-box; background:#CDD7E2; border-radius:6px;}
+.inp1{    width: 400px;
+    height: 50px;
+    border: solid 1px #ddd;
+    box-sizing: border-box;
+	padding:10px;
+	font-size:14px;
+	color:#000;
+}
+.btn{ 
+	width:100px;
+	height:50px;
+	position: relative;
+    top: -1px;
+	cursor:pointer;
+}
+.btn:active{
+	top:0px;	
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="box">
+    <div class="" id="qq">
+        
+        <div class="text left">
+            <span class="img"><img src="img/a.jpg" /></span>
+            <p class="p">那怎么用cookie获取进购物车的ookie获取进购物车的ookie获取进购物车的ookie获取进购物车的ookie获取进购物车的ookie获取进购物车的ookie获取进购物车的ookie获取进购物车的东西呢</p>
+        </div>
+        
+        <div class="text right">
+            <span class="img"><img src="img/b.jpg" /></span>
+            <p class="p">那怎么用cookie获取的东西呢</p>
+        </div>
+    </div>
+    
+    <div style="text-align:center;">
+    	<input type="text" class="inp1" id="ipt" /><button class="btn" id="btn">发送</button>
+    </div>
+    
+</div>
+<script>
+window.onload = function(){ 
+	
+	var oIpt = document.getElementById("ipt") , 
+		oBtn = document.getElementById("btn") ,
+		oQQ = document.getElementById("qq");
+	
+	oBtn.onclick = function(){ 
+		qq.qqClick();
+	};
+		
+	var qq = { 
+		
+		off : false , 
+				
+		val : "",
+		
+		qqClick : function(){ 
+			
+			this.val = oIpt.value;
+			if( this.val == "" ) return;
+						
+			this.off = !this.off;
+			
+			this.createElement();
+		} ,
+		
+		createElement : function(){ 
+			
+			var src = this.off ? "img/a.jpg" : "img/b.jpg" ,
+				oDiv = document.createElement("div");
+				
+			this.off ? oDiv.className = 'text left' : oDiv.className = 'text right';
+			oDiv.innerHTML = '<span class="img"><img src="'+src+'" /></span><p class="p">'+this.val+'</p>';
+			
+			oQQ.appendChild(oDiv);
+			
+		}
+		
+	};
+	
+	
+};
+</script>
+
+</body>
+</html>
