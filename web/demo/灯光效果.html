@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>灯光文字</title>
+<style>
+*{margin:0; padding:0; border:0; font-family:"微软雅黑"; box-sizing:border-box; }
+body{ 
+	background:#000;
+	padding-top:100px;
+	overflow:hidden;
+}
+.box{ 
+	width:800px;
+	height:500px;
+	background:#666;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	border:solid 1px #333;
+}
+.box:after{ 
+	content:"";
+	display:block;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:200px;
+	background:#999;
+}
+.text{ 
+	line-height:520px;
+	font-size:100px;
+	font-weight:700;
+	text-align:center;
+	color:#ddd;
+	text-shadow:0px 0px 0px #000;
+}
+.light{ 
+	width:1700px;
+	height:1000px;
+	position:absolute;
+	top:-250px;
+	left:-450px;
+	z-index:2;
+	background: url(img/d.png) no-repeat center center;
+	background-size:100% auto;
+}
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="box">
+	
+    <div class="text">JAVASCRIPT</div>
+    
+    <div class="light"></div>
+    
+</div>
+
+<script>
+
+var doc = document , 
+	oBox = doc.querySelector(".box") , 
+	oLight = doc.querySelector(".light") , 
+	oText = doc.querySelector(".text") , 
+	t = oBox.offsetTop , 
+	l = oBox.offsetLeft ,
+	xw = 400 ,
+	yw = 250;
+	
+oBox.onmousemove = function( ev ){ 
+	
+	var ev = ev || event , 
+		x = xw - (ev.clientX - l), 
+		y = yw - (ev.clientY - t) , 
+		xz = Math.floor( x*0.06 ) ,
+		yz = Math.floor( y*0.2 );
+			
+	oLight.style.left = -450 - x + "px";
+	oLight.style.top = -250 - y + "px";
+	oText.style.textShadow = ""+ xz +"px "+ yz +"px 0px #000";
+	
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
