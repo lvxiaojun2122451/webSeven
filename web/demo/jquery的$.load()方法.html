@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{ margin: 0; padding: 0;}
+    .div{
+        width: 1000px;
+        height: 500px;
+        border: solid 1px #ddd;
+    }
+</style>
+<body>
+
+<div class="div"></div>
+
+
+<script src="../js/jquery-2.0.3.min.js"></script>
+
+<script>
+    var oDiv = document.querySelector(".div");
+    var a = false;
+    oDiv.onclick = function(){
+
+       $( this).load("QQ聊天.html" , function(){
+           a = true;
+       })
+        console.log( a )
+    };
+
+</script>
+
+
+</body>
+</html>

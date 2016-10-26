@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/base.css" rel="stylesheet" type="text/css" >
+    <script src="../js/jquery-2.0.3.min.js"></script>
+    <script>
+        $(function(){
+
+            (function(){
+                var div_table1026 = $("#div_table1026"),
+                     a = div_table1026.find(".a_a1026");
+                a.on("click" , function(){
+                    var li = $(this).parent("li").first();
+                    var div = $(this).siblings(".table_box");
+
+                    if( li.hasClass("active") == true ){
+                        li.removeClass("active");
+                        div.animate({
+                            height : 0
+                        } , 300 , function(){
+                            $(this).hide()
+                        });
+                    }else{
+                        var h = $(this).siblings(".table_box").outerHeight();
+                        if( !div.prop("h") ){
+                            div.prop("h" , h)
+                        }
+                        li.addClass("active").siblings("li").removeClass("active");
+                        li.addClass("active").siblings("li").find(".table_box").stop().animate({
+                            height : 0
+                        } , 300 , function(){
+                            $(this).css("height" , "auto")
+                            $(this).hide()
+                        });
+                        div.show().css("height" , 0).stop().animate({
+                            height : $(this).siblings(".table_box").prop("h")
+                        },300);
+                    }
+
+                })
+
+            })();
+        })
+    </script>
+    <style>
+        .div_table1026{
+            width: 500px;
+            height: auto;
+            margin: 100px;
+            border-bottom: solid 1px #ddd;
+        }
+        .div_table1026 .a_head{
+            height: 40px;
+            line-height: 40px;
+            border: solid 1px #ddd;
+            border-bottom: 0;
+            transition: background 1s 0s;
+        }
+        .div_table1026>ul>li.active .a_head{
+            background: #0B60BA;
+            color: #FFFFFF;
+        }
+        .div_table1026 .a_head:hover{
+            background: #0B60BA;
+            color: #FFFFFF;
+        }
+        .div_table1026 td{
+            border: solid 1px #ddd;
+        }
+        .thead_thead{
+            background: linear-gradient(#F7F7F7 0 , #F2F2F2 50% , #ECECEC 100%);
+        }
+        .thead_thead td{
+            height: 39px;
+        }
+        .tbody_tbody td{
+            height: 29px;
+        }
+    </style>
+</head>
+<body>
+<div class="div_table1026" id="div_table1026">
+    <ul>
+        <li>
+            <a class="a_a1026 a_head d_block ti24 c3" href="javascript:void(0);">展开</a>
+            <div class="table_box d_none oh">
+                <table class="tc" width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <thead class="thead_thead">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    </thead>
+                    <tbody class="tbody_tbody">
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+        <li>
+            <div class="a_a1026 a_head d_block ti24 c3" href="javascript:void(0);">
+                <a class="mr20" href="javascript:void(0);">2</a><a class="mr20" href="javascript:void(0);">3</a><a class="mr20" href="javascript:void(0);">4</a>
+            </div>
+            <div class="table_box d_none oh">
+                <table class="tc" width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <thead class="thead_thead">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    </thead>
+                    <tbody class="tbody_tbody">
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+        <li>
+            <a class="a_a1026 a_head d_block ti24 c3" href="javascript:void(0);">展开</a>
+            <div class="table_box d_none oh">
+                <table class="tc" width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <thead class="thead_thead">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    </thead>
+                    <tbody class="tbody_tbody">
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>23</td>
+                        <td>23</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
