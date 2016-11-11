@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .fl{
+        float: left;
+    }
+    .clear{
+        clear: both;;
+    }
+    .box{
+        padding: 100px;
+    }
+    .style{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: #598dff;
+        color: #fff9ec;
+        margin-top: -6px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left:2px;
+        margin-right:2px;
+    }
+    .btn{
+        margin: 30px;
+    }
+</style>
+<body>
+
+<script src="../js/jquery-2.0.3.min.js"></script>
+<script>
+    $(function(){
+        //随机数
+        (function(){
+
+            $(".btn").on("click" , function(){
+
+                var num = getRandom(80 , 100),
+                    str = (num+""),
+                        len = str.length,
+                        i = 0;
+                var nodes = "";
+                for(; i<len; i++){
+                    nodes += '<li class="fl style">'+str.charAt(i)+'</li>';
+                };
+                $(".random").html( nodes );
+            })
+
+            /*随机函数*/
+            function getRandom(min , max){
+                var r = Math.random() * (max - min);
+                var re = Math.round(r + min);
+                re = Math.max(Math.min(re, max), min)
+                return re;
+            }
+
+        })();
+
+    });
+</script>
+<button class="btn">测测你的颜值</button>
+
+
+<div class="clear box">
+    <span class="fl">颜值</span>
+    <ul class="random fl">
+        <!--<li class="fl style">8</li>
+        <li class="fl style">8</li>-->
+    </ul>
+    <span class="fl">分</span>
+</div>
+
+
+</body>
+</html>
