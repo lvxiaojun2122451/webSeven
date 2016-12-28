@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>               <html class="ie8 no-js" lang="en">    <![endif]-->
+<!--[if lte IE 10]>				 <html class="ie10 no-js" lang="en">   <![endif]-->
+<!--[if !IE]>-->				 <html class="not-ie no-js" lang="en"> <!--<![endif]-->
+<head>
+	
+	<!-- Google Web Fonts
+  ================================================== -->
+	<link href='http://fonts.useso.com/css?family=Roboto:100,300,300italic,400,700|Julius+Sans+One|Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+	
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<title>Accio</title>	
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">	
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/grid.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/fontello.css" />
+	<link rel="stylesheet" href="css/animation.css" />
+	
+	<link rel="stylesheet" href="js/layerslider/css/layerslider.css" />
+	<link rel="stylesheet" href="js/flexslider/flexslider.css" />
+	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" />
+
+	<!-- HTML5 Shiv
+	================================================== -->
+	<script src="js/jquery.modernizr.js"></script>
+	
+</head>
+<body data-spy="scroll" data-target="#navigation" class="home">
+<!--<div class="adcenter"><script src="http://www.cssmoban.com/include/new/ggad2_728x90.js"></script></div>-->
+
+	
+	<!-- - - - - - - - - - - - - - Loader - - - - - - - - - - - - - - - - -->	
+
+	
+	<div class="loader"></div><!--/ .loader-->
+	
+	
+	<!-- - - - - - - - - - - - - end Loader - - - - - - - - - - - - - - - -->	
+
+	
+	<!-- - - - - - - - - - - - - - BG Video - - - - - - - - - - - - - - - - -->		
+
+
+	<a class="player" id="bgndVideo" data-property="{
+		videoURL: 'http://www.youtube.com/watch?v=qGsTlYLbwy4',
+		containment:'body',
+		autoPlay: true,
+		quality: 'small',
+		mute: true, 
+		startAt: 0,
+		opacity: 1,
+		ratio: '16/9', 
+		addRaster: false }">
+	</a>
+	
+
+	<!-- - - - - - - - - - - - - end BG Video - - - - - - - - - - - - - - - -->	
+	
+	
+<!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->	
+	
+
+<header id="header" class="transparent">
+	
+	<div class="header-in clearfix">
+		
+		<h1 id="logo"><a href="index.html">Accio</a></h1>
+		
+		<a id="responsive-nav-button" class="responsive-nav-button" href="#"></a>
+		
+		<nav id="navigation" class="navigation">
+			
+			<ul>
+				<li class="current-menu-item"><a href="#home">首页</a>
+					<ul>
+						<li class="current-menu-item"><a href="index.html">Layer Slider</a></li>
+						<li><a href="index-3.html">Slider Parallax</a></li>
+						<li><a href="index-2.html">Video Background</a>
+							<ul>
+								<li><a href="index-2.html">Youtube Video</a></li>
+								<li><a href="index-4.html">Vimeo Video</a></li>
+								<li><a href="index-5.html">Self Hosted Video</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#introduce">公司简介</a></li>
+				<li><a href="#team">产品介绍</a></li>
+				<li><a href="#solve-box">解决方案</a></li>
+				<li><a href="#folio">案例展示</a></li>
+				<li><a href="#about">新闻动态</a></li>
+				<li><a href="#services">发展历程</a></li>
+				<li><a href="#partner">合作伙伴</a></li>
+				<li><a href="#contacts">联系我们</a></li>
+<!--				<li><a href="http://www.cssmoban.com">More</a></li>-->
+			</ul>
+
+		</nav><!--/ #navigation-->
+		
+	</div><!--/ .header-in-->
+	
+</header><!--/ #header-->
+
+
+<!-- - - - - - - - - - - - - end Header - - - - - - - - - - - - - - - -->
+
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费模板</a></div>
+<!-- - - - - - - - - - - - - - Wrapper - - - - - - - - - - - - - - - - -->
+	
+
+<div id="wrapper">
+	
+	<section id="home" class="page">
+		
+		<section class="section padding-off">
+			
+			<div id="layerslider-container">
+				
+				<div id="layerslider">
+
+					<div class="ls-layer" style="slidedirection: left; durationin: 1500; durationout: 1500; easingin: easeInOutQuint; timeshift: -500;">
+						
+						<img alt="" class="ls-bg" src="images/banner1.jpg">
+						
+						<h1 class="ls-s2 align-center" style="top: 43%; left: 130px; slidedirection : top; slideoutdirection : fade; scaleout : 0.75; durationin : 2000; durationout : 1000; easingin : easeInOutQuint; easingout : easeInOutQuint;">
+							We Do awesome
+						</h1>
+						
+						<h1 class="ls-s2 align-center" style="top: 57%; left: 380px; slidedirection : bottom; slideoutdirection : fade; scaleout : 0.75; durationin : 2000; durationout : 1000; easingin : easeInOutQuint; easingout : easeInOutQuint;">
+							themes
+						</h1>
+						
+					</div><!--/ .ls-layer-->
+					
+					<div class="ls-layer" style="slidedirection: right; durationin: 1500; durationout: 1500; easingin: easeInOutQuint; timeshift: -500;">
+					
+						<img alt="" class="ls-bg" src="images/banner2.jpg">
+						
+						<h1 class="ls-s2 align-center" style="top: 43%; left: 180px; slidedirection : top; slideoutdirection : fade; scaleout : 0.75; durationin : 2000; durationout : 1000; easingin : easeInOutQuint; easingout : easeInOutQuint;">
+							We really love
+						</h1>
+						
+						<h1 class="ls-s2 align-center" style="top: 57%; left: 260px; slidedirection : bottom; slideoutdirection : fade; scaleout : 0.75; durationin : 2000; durationout : 1000; easingin : easeInOutQuint; easingout : easeInOutQuint;">
+							what we do
+						</h1>
+						
+					</div><!--/ .ls-layer-->
+					
+					<div class="ls-layer" style="slidedirection: right; durationin: 1500; durationout: 1500; easingin: easeInOutQuint; timeshift: -500;">
+					
+						<img alt="" class="ls-bg" src="images/banner3.jpg">
+						
+						<h1 class="ls-s2 align-center" style="top: 43%; left: 360px; slidedirection : top; slideoutdirection : fade; scaleout : 0.75; durationin : 2000; durationout : 1000; easingin : easeInOutQuint; easingout : easeInOutQuint;">
+							and do
+						</h1>
+						
+						<h1 class="ls-s2 align-center" style="top: 57%; left: 170px; slidedirection : bottom; slideoutdirection : fade; scaleout : 0.75; durationin : 2000; durationout : 1000; easingin : easeInOutQuint; easingout : easeInOutQuint;">
+							what we love!
+						</h1>
+						
+					</div><!--/ .ls-layer-->
+
+				</div><!--/ #layerslider-->
+
+			</div><!--/ #layerslider-container-->	
+
+			<ul class="keydown">
+				<li class="up"></li>
+				<li class="left"></li>
+				<li class="down"></li>
+				<li class="right"></li>
+			</ul><!--/ .keydown-->	
+			
+		</section><!--/ .section-->
+		
+	</section><!--/ .page-->
+
+	<section id="introduce" class="page">
+
+		<section class="section bg-gray-color">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h1>公司简介</h1>
+						</hgroup>
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+			<section class="team-member">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-xs-12 col-md-6 col-sm-12">
+							<article>
+								<h2>海南易乐物联科技有限公司</h2>
+								<p style="font-size:16px;">海南易乐物联科技有限公司于2014年成立于海口，公司拥有一支与国际一流水准对接的技术团队，创立者均来自世界500强和著名科技公司，有着丰富和完全实战型的项目研发及创新经验。
+									公司的核心竞争力主要集中在车联网技术的研发及智慧旅游大数据挖掘创新两大领域上，并以此为核心聚焦在新旅游业态下的综合性解决方案，以智慧出行无缝对接了吃、住、游、购、娱五大智游元素。
+									易乐物联正逐步建立一套完整的研发、运营和服务体系，同时旅游与汽车产业链的上下游和线下机构建立了长期的战略合作伙伴关系，塑造了一个全新的“车旅生态圈”。我们致力于对客户需求的前瞻性理解，提供车联网+智慧营销+智慧管理+智慧服务的端到端的具有高价值链的综合服务体系。
+									无论是产品还是人员，我们都是一个开放创新、积极进取、最大限度地满足客户需求的价值定位。
+								</p>
+							</article>
+						</div>
+						<div class="col-xs-12 col-md-6 col-sm-12">
+							<embed src="http://player.video.qiyi.com/e7882cb1909d05637b4a56db4c1649ab/0/0/w_19rruc7231.swf-albumId=4247608609-tvId=4247608609-isPurchase=0-cnId=5" allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+						</div>
+
+					</div><!--/ .row-->
+
+				</div><!--/ .container-->
+
+			</section><!--/ .team-member-->
+
+		</section><!--/ .section-->
+
+		<section class="section parallax parallax-bg-1 bg-turquoise-color">
+
+			<div class="full-bg-image" style="background-position: center -5px;"></div>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<ul class="quotes opacityRun" data-timeout="6000">
+
+							<li class="align-center">
+								<blockquote class="quote-text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet leo sapien bibendum Aenean sit amet tempor augue</p>
+								</blockquote>
+								<div class="quote-image"><img alt="Jack Black" src="http://placehold.it/70x70"></div>
+								<div class="quote-author"><span>Jack Black, Web Designer</span></div>
+							</li>
+
+							<li class="align-center">
+								<blockquote class="quote-text">
+									<p>Consecetur adipiscing donec ipsum, loboris convallis rutrum culis. Aliquam vitae odio elit nullam condimentum varius.
+										Consecetur adipiscing donec ipsum, loboris.
+									</p>
+								</blockquote>
+								<div class="quote-image"><img alt="Jack Black" src="http://placehold.it/70x70"></div>
+								<div class="quote-author"><span>Amanda Black, Web Designer</span></div>
+							</li>
+
+						</ul><!--/ .quotes-->
+
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section>
+
+	</section><!--/ .page-->
+
+	<section id="team" class="page">
+
+		<section class="section bg-gray-color">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h1>我们的产品</h1>
+							<h2>我们为客户提供最优质的服务</h2>
+						</hgroup>
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+			<section class="team-member">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-xs-12">
+
+							<div class="team-contents clearfix">
+
+								<article class="scale">
+
+									<div class="contents clearfix">
+
+										<div class="team-info">
+
+											<div class="team-image">
+												<a class="single-image team-plus-icon" href="javascript:;"><img src="http://placehold.it/250x270" alt="" /></a>
+											</div>
+
+											<hgroup class="team-group">
+												<h2 class="team-title">车咖APP</h2>
+												<!--<h5 class="team-position">Web Designer</h5>-->
+											</hgroup>
+
+										</div><!--/ .team-info-->
+
+									</div><!--/ .contents-->
+
+
+
+								</article>
+
+								<article class="scale">
+
+									<div class="contents clearfix">
+
+										<div class="team-info">
+
+											<div class="team-image">
+												<a class="single-image team-plus-icon" href="javascript:;"><img src="http://placehold.it/250x270" alt="" /></a>
+											</div>
+
+											<hgroup class="team-group">
+												<h2 class="team-title">惠享车APP</h2>
+												<!--<h5 class="team-position">Web Designer</h5>-->
+											</hgroup>
+
+										</div><!--/ .team-info-->
+
+									</div><!--/ .contents-->
+
+								</article>
+
+								<article class="scale">
+
+									<div class="contents clearfix">
+
+										<div class="team-info">
+
+											<div class="team-image">
+												<a class="single-image team-plus-icon" href="javascript:;"><img src="http://placehold.it/250x270" alt="" /></a>
+											</div>
+
+											<hgroup class="team-group">
+												<h2 class="team-title">Smart-box</h2>
+											</hgroup>
+
+										</div><!--/ .team-info-->
+
+									</div><!--/ .contents-->
+
+								</article>
+
+								<article class="scale">
+
+									<div class="contents clearfix">
+
+										<div class="team-info">
+
+											<div class="team-image">
+												<a class="single-image team-plus-icon" href="javascript:;"><img src="http://placehold.it/250x270" alt="" /></a>
+											</div>
+
+											<hgroup class="team-group">
+												<h2 class="team-title">obd设备</h2>
+											</hgroup>
+
+										</div><!--/ .team-info-->
+
+									</div><!--/ .contents-->
+
+								</article>
+
+							</div><!--/ .team-contents-->
+
+						</div>
+
+					</div><!--/ .row-->
+
+				</div><!--/ .container-->
+
+			</section><!--/ .team-member-->
+
+		</section><!--/ .section-->
+
+		<section class="section parallax parallax-bg-2" id="solve-box">
+
+			<div class="full-bg-image"></div>
+			<div class="parallax-overlay"></div>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h2>解决方案</h2>
+						</hgroup>
+					</div>
+
+				</div><!--/ .row-->
+
+				<ul id="flexiselDemo3">
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>分时租赁解决方案</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>网约车解决方案</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>汽车租赁管理系统</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>旅游大数据解决方案</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>汽车金融解决方案</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>充电桩解决方案</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>公车改革解决方案</p>
+					</li>
+					<li>
+						<img src="http://placehold.it/150x200" />
+						<p>政企车队解决方案</p>
+					</li>
+				</ul>
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+
+	</section><!--/ .page-->
+	
+	<section id="folio" class="page">
+		
+		<section class="section padding-bottom-off">
+			
+			<div class="container">
+				
+				<div class="row">
+					
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h1>案例展示</h1>
+						</hgroup>							
+					</div>
+					
+				</div><!--/ .row-->
+				
+				<div class="row">
+					
+					<div class="col-xs-12">
+						<ul id="portfolio-filter" class="portfolio-filter opacity">
+							<li class="filter active" data-filter="all">All</li>
+							<li class="filter" data-filter="video">Video</li>
+							<li class="filter" data-filter="branding">Branding</li>
+							<li class="filter" data-filter="logo">Logo</li>
+							<li class="filter" data-filter="photo">Photo</li>
+						</ul><!--/ #portfolio-filter -->		
+					</div>
+					
+				</div><!--/ .row-->
+					
+			</div><!--/ .container-->
+
+			<ul id="portfolio-items" class="portfolio-items">
+
+				<li class="video mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Petit</h2>
+									<h6 class="extra-category">Video</h6>
+									<a class="single-image link-icon" href="project-single.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/1.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+
+				</li>					
+
+				<li class="branding mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Isabela Rodrigues</h2>
+									<h6 class="extra-category">Branding</h6>
+									<a class="single-image link-icon" href="project-single-2.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/2.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="logo mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Illegal Burger ®</h2>
+									<h6 class="extra-category">Logo</h6>
+									<a class="single-image link-icon" href="project-single-3.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/3.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="photo mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Mercado Negro</h2>
+									<h6 class="extra-category">Photo</h6>
+									<a class="single-image link-icon" href="project-single-4.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/4.jpg"></a>									
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="logo mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Kate & Julia</h2>
+									<h6 class="extra-category">Logo</h6>
+									<a class="single-image link-icon" href="project-single.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/5.jpg"></a>	
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="video mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">No Doubt</h2>
+									<h6 class="extra-category">Video</h6>
+									<a class="single-image link-icon" href="project-single-2.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/6.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="branding mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">AM1000 Studios</h2>
+									<h6 class="extra-category">Branding</h6>
+									<a class="single-image link-icon" href="project-single-3.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/7.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="logo mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Market Decor</h2>
+									<h6 class="extra-category">Logo</h6>
+									<a class="single-image link-icon" href="project-single-4.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/8.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="photo mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Spicemode</h2>
+									<h6 class="extra-category">Photo</h6>
+									<a class="single-image link-icon" href="project-single.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/9.jpg"></a>
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->	
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+				<li class="logo mix mix_all opacity2x">
+					
+					<div class="work-item">
+						<img src="http://placehold.it/510x375" alt="" />
+						<div class="image-extra">
+							<div class="extra-content">
+								<div class="inner-extra">
+									<h2 class="extra-title">Alfa Studios</h2>
+									<h6 class="extra-category">Logo</h6>
+									<a class="single-image link-icon" href="project-single-2.html"></a>
+									<a class="single-image plus-icon" data-fancybox-group="folio" href="images/portfolio/10.jpg"></a>	
+								</div><!--/ .inner-extra-->	
+							</div><!--/ .extra-content-->
+						</div><!--/ .image-extra-->	
+					</div><!--/ .work-item-->
+					
+				</li>					
+
+			</ul><!--/ .portfolio-items-->
+			
+		</section><!--/ .section-->
+		
+	</section><!--/ .page-->
+
+	<section id="about" class="page">
+
+		<section class="section">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+						<hgroup class="slogan align-center opacity">
+							<h1>To Make Your Life <span>Easier</span> – Is Our Top Priority - shared on mobantu.com</h1>
+							<h2>we are driving crazy with each and every web-miracle we work on</h2>
+						</hgroup>
+					</div>
+
+				</div><!--/ .row-->
+
+				<div class="row">
+
+					<div class="col-md-7 opacity">
+						<p>
+							<img src="http://placehold.it/650x380" alt="" />
+						</p>
+					</div><!--/ .col-md-6-->
+
+					<div class="col-md-5">
+
+						<p class="opacity">
+							Lorem ipsum dolor amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales.
+							Ut posuere neque in molestie gravida. Integer neque lementum posuere purus. Nam convallis ipsum. Maecenas a vulputate ipsum.
+						</p>
+
+						<ul class="list circle-list opacity">
+
+							<li>Stunning Parallax Effects</li>
+							<li>Totally Responsive & Unbelievably Clean</li>
+							<li>Multiple CSS3 Animations</li>
+							<li>SEO-Optimised & Valid Code</li>
+							<li>Parallax Video Background Effect</li>
+
+						</ul><!--/ .list-->
+
+					</div><!--/ .col-md-5-->
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+
+		<section class="section parallax parallax-bg-1 bg-turquoise-color">
+
+			<div class="full-bg-image"></div>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<ul class="quotes opacity" data-timeout="6000">
+
+							<li class="align-center">
+								<blockquote class="quote-text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet leo sapien bibendum Aenean sit amet tempor augue</p>
+								</blockquote>
+								<div class="quote-image"><img alt="Jack Black" src="http://placehold.it/70x70"></div>
+								<div class="quote-author"><span>Jack Black, Web Designer</span></div>
+							</li>
+
+							<li class="align-center">
+								<blockquote class="quote-text">
+									<p>Consecetur adipiscing donec ipsum, loboris convallis rutrum culis. Aliquam vitae odio elit nullam condimentum varius.
+										Consecetur adipiscing donec ipsum, loboris.
+									</p>
+								</blockquote>
+								<div class="quote-image"><img alt="Jack Black" src="http://placehold.it/70x70"></div>
+								<div class="quote-author"><span>Amanda Black, Web Designer</span></div>
+							</li>
+
+						</ul><!--/ .quotes-->
+
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+
+	</section><!--/ .section-->
+	
+	<section id="blog" class="page">
+		
+		<!--<section class="section bg-gray-color">
+			
+			<div class="container">
+
+				<div class="row">
+					
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h1>Latest From the Blog</h1>
+							<h2>Keep on track of latest news and updates</h2>	
+						</hgroup>						
+					</div>
+					
+				</div>&lt;!&ndash;/ .row&ndash;&gt;
+
+				<div class="row">
+					
+					<div class="col-sm-6 col-lg-4 slideRight">
+
+						<article class="entry">
+
+							<div class="entry-image">
+								<div class="work-item">
+									<img src="http://placehold.it/560x390" alt="" />
+									<div class="image-extra">
+										<div class="extra-content">
+											<div class="inner-extra">
+												<a class="single-image link-icon" href="blog-single.html"></a>
+												<a class="single-image plus-icon" data-fancybox-group="blog" href="images/blog/latest-blog-1.jpg"></a>	
+											</div>&lt;!&ndash;/ .inner-extra&ndash;&gt;
+										</div>&lt;!&ndash;/ .extra-content&ndash;&gt;
+									</div>&lt;!&ndash;/ .image-extra&ndash;&gt;
+								</div>&lt;!&ndash;/ .work-item&ndash;&gt;
+							</div>&lt;!&ndash;/ .entry-image&ndash;&gt;
+
+							<div class="entry-meta">
+								<span class="date"><a href="#">15.11.2013</a></span>
+								<span class="comments">0 Comments</span>
+							</div>&lt;!&ndash;/ .entry-meta&ndash;&gt;
+
+							<h2 class="entry-title">
+								<a href="blog-single.html">Post With Image</a>
+							</h2>&lt;!&ndash;/ .entry-title&ndash;&gt;
+
+							<div class="entry-body">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere 
+									neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.
+								</p>
+							</div>&lt;!&ndash;/ .entry-body&ndash;&gt;
+
+						</article>&lt;!&ndash;/ .entry&ndash;&gt;
+
+					</div>
+
+					<div class="col-sm-6 col-lg-4 slideUp">
+
+						<article class="entry">
+
+							<div class="entry-image">
+								<div class="work-item">
+									<img src="http://placehold.it/560x390" alt="" />
+									<div class="image-extra">
+										<div class="extra-content">
+											<div class="inner-extra">
+												<a class="single-image link-icon" href="blog-single.html"></a>
+												<a class="single-image plus-icon" data-fancybox-group="blog" href="images/blog/latest-blog-2.jpg"></a>	
+											</div>&lt;!&ndash;/ .inner-extra&ndash;&gt;
+										</div>&lt;!&ndash;/ .extra-content&ndash;&gt;
+									</div>&lt;!&ndash;/ .image-extra&ndash;&gt;
+								</div>&lt;!&ndash;/ .work-item&ndash;&gt;
+							</div>&lt;!&ndash;/ .entry-image&ndash;&gt;
+
+							<div class="entry-meta">
+								<span class="date"><a href="#">15.11.2013</a></span>
+								<span class="comments">0 Comments</span>
+							</div>&lt;!&ndash;/ .entry-meta&ndash;&gt;
+
+							<h2 class="entry-title">
+								<a href="blog-single.html">Gallery Post Format</a>
+							</h2>&lt;!&ndash;/ .entry-title&ndash;&gt;
+
+							<div class="entry-body">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere 
+									neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.
+								</p>
+							</div>&lt;!&ndash;/ .entry-body&ndash;&gt;
+
+						</article>&lt;!&ndash;/ .entry&ndash;&gt;
+
+					</div>
+
+					<div class="col-sm-6 col-lg-4 slideLeft">
+
+						<article class="entry">
+
+							<div class="entry-image">
+								<div class="work-item">
+									<img src="http://placehold.it/560x390" alt="" />
+									<div class="image-extra">
+										<div class="extra-content">
+											<div class="inner-extra">
+												<a class="single-image link-icon" href="blog-single.html"></a>
+												<a class="single-image plus-icon" data-fancybox-group="blog" href="images/blog/latest-blog-3.jpg"></a>	
+											</div>&lt;!&ndash;/ .inner-extra&ndash;&gt;
+										</div>&lt;!&ndash;/ .extra-content&ndash;&gt;
+									</div>&lt;!&ndash;/ .image-extra&ndash;&gt;
+								</div>&lt;!&ndash;/ .work-item&ndash;&gt;
+							</div>&lt;!&ndash;/ .entry-image&ndash;&gt;
+
+							<div class="entry-meta">
+								<span class="date"><a href="#">15.11.2013</a></span>
+								<span class="comments">0 Comments</span>
+							</div>&lt;!&ndash;/ .entry-meta&ndash;&gt;
+
+							<h2 class="entry-title">
+								<a href="blog-single.html">Video Post Format</a>
+							</h2>&lt;!&ndash;/ .entry-title&ndash;&gt;
+
+							<div class="entry-body">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere 
+									neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.
+								</p>
+							</div>&lt;!&ndash;/ .entry-body&ndash;&gt;
+
+						</article>&lt;!&ndash;/ .entry&ndash;&gt;
+
+					</div>
+					
+				</div>&lt;!&ndash;/ .row&ndash;&gt;
+				
+				<div class="col-xs-12">
+					<div class="align-center opacity">
+						<a href="blog.html" class="button large default">View All Posts</a>
+					</div>
+				</div>
+				
+			</div>&lt;!&ndash;/ .container&ndash;&gt;
+			
+		</section>&lt;!&ndash;/ .section&ndash;&gt;-->
+
+		<section class="section border" id="partner">
+
+			<div class="container">
+
+				<div class="row">
+					
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h2>合作伙伴</h2>
+						</hgroup>			
+					</div>
+					
+				</div><!--/ .row-->
+
+				<div class="row">
+					
+					<div class="col-xs-12">
+						<ul class="clients-items">
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+							<li class="opacity2x"><a href="#"><img src="http://placehold.it/140x95" alt="" /></a></li>
+						</ul><!--/ .clients-items-->
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+
+		<section class="section parallax parallax-bg-3 bg-dark-color">
+
+			<div class="full-bg-image"></div>
+			<div class="parallax-overlay"></div>
+
+			<div class="container">
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="tweet opacity" data-timeout="6000"></div>
+					</div>
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+		
+	</section><!--/ .page-->
+
+	<section id="services" class="page">
+
+		<section class="section">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h1>发展历程</h1>
+							<!--<h2>We are more than happy to offer you</h2>-->
+						</hgroup>
+					</div>
+
+				</div><!--/ .row-->
+
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<div class="flexslider opacity">
+
+							<ul class="slides">
+								<li data-icon="icon-paper-plane-2" data-title="ideas">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+								<li data-icon="icon-pencil-7" data-title="design">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+								<li data-icon="icon-cog-6" data-title="build">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+								<li data-icon="icon-beaker-1" data-title="html">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+								<li data-icon="icon-megaphone-3" data-title="php">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+								<li data-icon="icon-search" data-title="seo">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+								<li data-icon="icon-comment-6" data-title="support">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida.
+										Integer eu feugiat neque, elementum posuere purus. Nam vitae convallis ipsum. Maecenas a vulputate ipsum, vestibulum lobortis enim.
+										Sed nec consequat felis. Proin sit amet sollicitudin neque, a rhoncus nisl. Aliquam malesuada elementum risus, sit amet dictum erat tempor nec.
+										Suspendisse lectus massa, consequat at pellentesque sed, aliquam ullamcorper orci.
+									</p>
+								</li>
+							</ul>
+
+						</div><!--/ .flexslider-->
+
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+
+		<section class="section parallax mobile-video-image">
+
+			<div class="full-bg-image"></div>
+			<div class="parallax-overlay"></div>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<div class="video-full-entry align-center">
+
+							<h1 class="video-title opacity">Parallax Video Effect</h1>
+
+							<a href="blog.html" class="button default large opacity">View Our Blog</a>
+							<a href="shortcodes.html" class="button turquoise large opacity">Features</a>
+
+						</div><!--/ .video-full-entry-->
+
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->
+
+	</section><!--/ .page-->
+	
+	<section id="contacts" class="page">
+		
+		<section class="section padding-bottom-off">
+			
+			<div class="container">
+
+				<div class="row">
+					
+					<div class="col-xs-12">
+						<hgroup class="section-title align-center opacity">
+							<h1>联系我们</h1>
+							<h2>We are looking forward to hear from you</h2>	
+						</hgroup>		
+					</div>
+					
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+			
+		</section><!--/ .section-->
+		
+		<section class="section padding-off">
+			<div class="google_map"></div>
+		</section><!--/ .section-->
+
+	</section><!--/ .page-->
+	
+	
+	<!-- - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
+	
+	
+	<footer id="footer">
+		
+		<section class="section parallax parallax-bg-4">
+
+			<div class="full-bg-image"></div>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-md-6 opacity">
+
+						<form class="contact-form" method="post" action="/">
+
+							<p class="input-block">
+								<input type="text" name="name" id="name" placeholder="Name *" />
+							</p>
+
+							<p class="input-block">
+								<input type="email" name="email" id="email" placeholder="Email *" />
+							</p>
+
+							<p class="input-block">
+								<input type="url" name="website" id="url" placeholder="Website" />
+							</p>
+
+							<p class="input-block">
+								<textarea name="message" id="message" placeholder="Message *"></textarea>	
+							</p>
+							
+							<p class="input-block">
+								<!--<iframe src="php/capcha_page.php" height="50" width="100" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" class="capcha-frame" name="capcha_image_frame"></iframe>-->
+								<input class="verify" type="text" id="verify" name="verify" />
+							</p>	
+
+							<p class="input-block">
+								<button class="button turquoise submit" type="submit" id="submit"><i class="icon-paper-plane-2"></i></button>
+							</p>
+
+						</form><!--/ .contact-form-->	
+
+					</div>
+
+					<div class="col-md-6">
+						
+						<div class="widget widget_text opacity">
+							<h3>技术服务</h3>
+							<ul class="contact-details">
+								<li>技术交流邮箱:td@icarplus.net</li>
+								<li>联系地址:海南省海口市龙华区海秀中路52-6号昌海商务大厦303室</li>
+							</ul><!--/ .contact-details-->
+							
+						</div><!--/ .widget-->
+						
+						<div class="widget widget_contacts opacity">
+							<h3>合作加盟</h3>
+							<ul class="contact-details">
+								<li>邮箱:md@icarplus.net</li>
+								<li>联系地址:海南省海口市龙华区海秀中路52-6号昌海商务大厦303室</li>
+								<li>充电桩业务联系人:刘总</li>
+							</ul><!--/ .contact-details-->
+							
+						</div><!--/ .widget-->
+
+						<div class="widget widget_contacts opacity">
+							<h3>招贤纳士</h3>
+							<ul class="contact-details">
+								<li>投递简历邮箱:hr@icarplus.net</li>
+							</ul><!--/ .contact-details-->
+
+						</div><!--/ .widget-->
+						
+						<div class="widget widget_social opacity">
+							
+							<ul class="social-icons">
+								<li class="twitter"><a href="#"><i class="icon-twitter"></i>Twitter</a></li>
+								<li class="facebook"><a href="#"><i class="icon-facebook"></i>Facebook</a></li>
+								<li class="linkedin"><a href="#"><i class="icon-linkedin"></i>LinkedIn</a></li>
+								<li class="pinterest"><a href="#"><i class="icon-pinterest-circled"></i>Pinterest</a></li>
+								<li class="rss"><a href="#"><i class="icon-rss"></i>Rss</a></li>
+								<li class="gplus"><a href="#"><i class="icon-gplus"></i>Gplus</a></li>
+								<li class="youtube"><a href="#"><i class="icon-youtube"></i>Youtube</a></li>
+								<li class="instagram"><a href="#"><i class="icon-instagramm"></i>Instagram</a></li>
+								<li class="dribbble"><a href="#"><i class="icon-dribbble"></i>Dribbble</a></li>
+							</ul><!--/ .social-icons-->
+							
+						</div><!--/ .widget-->
+						
+					</div>
+
+				</div><!--/ .row-->
+
+			</div><!--/ .container-->
+
+		</section><!--/ .section-->	
+		
+		<div class="logo-in-footer">
+			
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="friendlink-box">
+							<span>友情链接：</span>
+							<a href="#">北汽集团</a>
+							<a href="#">北汽银建</a>
+							<a href="#">银建集团</a>
+							<a href="#">北汽银建易乐</a>
+							<a href="#">北汽银建株洲</a>
+							<a href="#">易出行</a>
+							<a href="#">大同旅游网</a>
+						</div>
+					</div>
+				</div><!--/ .row-->
+				
+			</div><!--/ .container-->
+			
+		</div><!--/ .logo-in-footer-->
+
+		<div class="bottom-footer clearfix">
+
+			<div class="container">
+				
+				<div class="row">
+					
+					<div class="col-xs-12">
+						
+						<div class="copyright align-center">
+							Copyright&copy;2015海南易乐物联科技有限公司&nbsp;琼ICP备&nbsp;15001666-Collect from Icarplus
+						</div><!--/ .cppyright-->
+						
+					</div>
+
+				</div><!--/ .row-->
+				
+			</div><!--/ .container-->
+
+		</div><!--/ .bottom-footer-->	
+		
+	</footer><!--/ #footer-->
+
+	
+	<!-- - - - - - - - - - - - - end Footer - - - - - - - - - - - - - - - -->
+
+
+</div><!--/ #wrapper-->
+
+<!--文章列表页内容-->
+<div class="algid_box">
+<div class="align_artile">
+<div class="one-box">
+	<h2 class="align-center">车咖APP</h2>
+	<p>根据国家关于公车改革的相关政策，政府机关从租赁企业办理车辆租赁后，为本企业办理一张消费主卡，主卡的充值金额为本单位一 年的租车费用预算。
+		同时为各级公务员办理消费副卡，根据各级别公务员的补助标准，由主卡向副卡分配消费金额。 公务员用副卡解锁车辆，生成订单后自动计费。</p>
+	<img src="images/banner1.jpg" alt="车咖APP"/>
+</div>
+</div>
+<div class="align_artile">
+    <div class="one-box">
+        <h2 class="align-center">惠享车APP</h2>
+        <p>根据国家关于公车改革的相关政策，政府机关从租赁企业办理车辆租赁后，为本企业办理一张消费主卡，主卡的充值金额为本单位一 年的租车费用预算。
+            同时为各级公务员办理消费副卡，根据各级别公务员的补助标准，由主卡向副卡分配消费金额。 公务员用副卡解锁车辆，生成订单后自动计费。</p>
+        <img src="images/banner1.jpg" alt="车咖APP"/>
+    </div>
+</div>
+<div class="align_artile">
+    <div class="one-box">
+        <h2 class="align-center">Smart-box</h2>
+        <p>根据国家关于公车改革的相关政策，政府机关从租赁企业办理车辆租赁后，为本企业办理一张消费主卡，主卡的充值金额为本单位一 年的租车费用预算。
+            同时为各级公务员办理消费副卡，根据各级别公务员的补助标准，由主卡向副卡分配消费金额。 公务员用副卡解锁车辆，生成订单后自动计费。</p>
+        <img src="images/banner1.jpg" alt="车咖APP"/>
+    </div>
+</div>
+<div class="align_artile">
+    <div class="one-box">
+        <h2 class="align-center">odb设备</h2>
+        <p>根据国家关于公车改革的相关政策，政府机关从租赁企业办理车辆租赁后，为本企业办理一张消费主卡，主卡的充值金额为本单位一 年的租车费用预算。
+            同时为各级公务员办理消费副卡，根据各级别公务员的补助标准，由主卡向副卡分配消费金额。 公务员用副卡解锁车辆，生成订单后自动计费。</p>
+        <img src="images/banner1.jpg" alt="车咖APP"/>
+    </div>
+</div>
+</div>
+
+<!-- - - - - - - - - - - - - end Wrapper - - - - - - - - - - - - - - - -->
+
+
+<script src="js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="js/jquery.queryloader2.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.easing.1.3.min.js"></script>
+<script src="js/jquery.cycle.all.min.js"></script>
+<script src="js/layerslider/js/layerslider.transitions.js"></script>
+<script src="js/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/jquery.mb.YTPlayer.js"></script>
+<!--<script src="js/jquery.smoothscroll.js"></script>-->
+<script src="js/flexslider/jquery.flexslider.js"></script>
+<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="layui/layui.js"></script>
+
+<!--<script src="js/jquery.gmap.min.js"></script>-->
+<script src="twitter/jquery.tweet.js"></script>
+<script src="js/jquery.touchswipe.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/custom.js"></script>
+
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
+
+</body>
+</html>
