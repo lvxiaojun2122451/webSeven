@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+
+</head>
+<body>
+<a class="aaa">ddd</a>
+<script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script>
+
+
+        $( ".aaa" ).on("click",function(){
+
+            var a = $("<div id='div' title='aaaaa'>").html("ddddd")
+
+            $( a ).dialog({
+                autoOpen: true,
+                resizable: false,
+                width: 400,
+                buttons: [
+                    {
+                        text: "确认",
+                        click: function() {
+                            console.log( this )
+                            $( this ).dialog( "destroy" );
+                        }
+                    }
+                ],
+                close : function(){
+                    $( this ).dialog( "destroy" );
+                }
+            });
+            event.preventDefault();
+
+        })
+
+
+
+</script>
+</body>
+</html>
